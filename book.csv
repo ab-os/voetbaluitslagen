@@ -1,5 +1,17 @@
-date,home_team,away_team,expect_home,expect_tie,expect_away,date_of_bet,euro
-9/16,az alkmaar,feyenoord,1.210,0.924,0.752,5-9-2018
-9/16,utrecht,emmen,0.756,1.261,1.500,5-9-2018
-9/16,heerenveen,heracles,0.835,0.996,1.248,5-9-2018
-9/21,heracles,de graafschap,0.808,1.080,1.250,5-9-2018
+date;home_team;away_team;league;home_win;tie;away_win;odd_home_win;odd_tie;odd_away_win;expect_home;expect_tie;expect_away;date_of_bet;euro;profit
+5-okt;utrecht;nac breda;eredivisie;0,54;0,26;0,2;1,52;4,25;6,75;0,821;1,105;1,35;5-10-2018;3;
+6-okt;de graafschap;heerenveen;eredivisie;0,37;0,27;0,36;3,3;3,7;2,15;1,221;0,999;0,774;5-10-2018;3;
+20-okt;utrecht;az alkmaar;eredivisie;0,27;0,26;0,47;2,4;3,5;2,8;0,648;0,91;1,316;5-10-2018;3;
+6-okt;alaves;real madrid;la-liga;0,15;0,19;0,66;8,75;5,1;1,37;1,312;0,969;0,904;5-10-2018;3;
+20-okt;villarreal;atletico madrid;la-liga;0,33;0,28;0,39;3,75;3,1;2,1;1,238;0,868;0,819;5-10-2018;3;
+21-okt;eibar;athletic bilbao;la-liga;0,47;0,28;0,25;2,7;3,05;2,7;1,269;0,854;0,675;5-10-2018;3;
+21-okt;huesca;espanyol;la-liga;0,39;0,28;0,33;3,3;3,3;2,15;1,287;0,924;0,71;5-10-2018;3;
+6-okt;alaves;real madrid;la-liga;0,15;0,19;0,66;8,75;5,1;1,37;1,312;0,969;0,904;5-10-2018;3;
+20-okt;villarreal;atletico madrid;la-liga;0,33;0,28;0,39;3,75;3,1;2,1;1,238;0,868;0,819;5-10-2018;3;
+21-okt;eibar;athletic bilbao;la-liga;0,47;0,28;0,25;2,7;3,05;2,7;1,269;0,854;0,675;5-10-2018;3;
+21-okt;huesca;espanyol;la-liga;0,39;0,28;0,33;3,3;3,3;2,15;1,287;0,924;0,71;5-10-2018;3;
+6-okt;crystal palace;wolverhampton;premier-league;0,46;0,29;0,25;2,95;3,25;2,65;1,357;0,942;0,662;5-10-2018;3;
+6-okt;man. united;newcastle;premier-league;0,61;0,24;0,14;1,44;4,6;8,8;0,878;1,104;1,232;5-10-2018;3;
+7-okt;southampton;chelsea;premier-league;0,2;0,24;0,56;6,05;4,15;1,62;1,21;0,996;0,907;5-10-2018;3;
+20-okt;huddersfield;liverpool;premier-league;0,11;0,2;0,7;11,5;5,9;1,25;1,265;1,18;0,875;5-10-2018;3;
+7-okt;psg;lyon;ligue-1;0,65;0,19;0,16;1,32;5,8;8;0,858;1,102;1,28;5-10-2018;3;
