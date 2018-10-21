@@ -459,3 +459,13 @@ JavaScript error: jar:file:///usr/lib/firefox-esr/omni.ja!/components/addonsInfo
 1538915984013	Marionette	INFO	Listening on port 38139
 1538915984149	Marionette	WARN	TLS certificate errors will be ignored for this session
 console.log: Accessibility service init or shutdown observer does not exist.
+1539506360623	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.RDb7G53KE5x8"
+JavaScript error: jar:file:///usr/lib/firefox-esr/omni.ja!/components/addonsInfo.js, line 91: SyntaxError: "0"-prefixed octal literals and octal escape sequences are deprecated; for octal literals use the "0o" prefix instead
+1539506369388	Marionette	INFO	Listening on port 33841
+1539506369561	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.log: Accessibility service init or shutdown observer does not exist.
+1540145368756	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.CqxZNvI459Fy"
+JavaScript error: jar:file:///usr/lib/firefox-esr/omni.ja!/components/addonsInfo.js, line 91: SyntaxError: "0"-prefixed octal literals and octal escape sequences are deprecated; for octal literals use the "0o" prefix instead
+1540145378656	Marionette	INFO	Listening on port 46321
+1540145378730	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.log: Accessibility service init or shutdown observer does not exist.
