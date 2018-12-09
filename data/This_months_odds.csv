@@ -1,90 +1,80 @@
 away_team,home_team,odd_away_win,odd_home_win,odd_tie,league
-willem ii,pec zwolle,3.85,1.9,3.7,eredivisie
-nac breda,fc emmen,3.1,2.25,3.45,eredivisie
-ajax,excelsior rotterdam,1.18,12.5,7.5,eredivisie
-psv eindhoven,de graafschap,1.25,12.0,5.75,eredivisie
-az alkmaar,ado den haag,1.85,4.1,3.6,eredivisie
-fc utrecht,vitesse,3.25,2.04,3.8,eredivisie
-sc heerenveen,fc groningen,2.85,2.4,3.4,eredivisie
-feyenoord,heracles almelo,1.73,4.45,3.9,eredivisie
-fortuna sittard,vvv venlo,3.85,1.9,3.7,eredivisie
-leganes,girona fc,3.6,2.05,3.3,la_liga
-real sociedad,levante,2.5,2.8,3.2,la_liga
-athletic club bilbao,atletico madrid,8.5,1.42,4.0,la_liga
-valencia,getafe,2.6,2.7,3.2,la_liga
-espanyol,sevilla,4.75,1.67,3.8,la_liga
-eibar,valladolid,3.3,2.3,3.0,la_liga
-villarreal,rayo vallecano,2.2,3.2,3.25,la_liga
-huesca,alaves,4.95,1.75,3.4,la_liga
-real betis,fc barcelona,13.0,1.17,7.2,la_liga
-real madrid,celta vigo,1.67,4.5,4.0,la_liga
-athletic club bilbao,espanyol,4.3,1.94,3.45,la_liga
-hannover 96,borussia monchengladbach,6.1,1.5,4.4,bundesliga
-vfb stuttgart,1. fc nurnberg,2.88,2.4,3.45,bundesliga
-borussia dortmund,mainz 05,1.62,5.1,4.1,bundesliga
-hoffenheim,hertha berlin,2.4,2.85,3.5,bundesliga
-bayer leverkusen,rb leipzig,3.75,1.89,3.9,bundesliga
-schalke 04,eintracht frankfurt,3.1,2.4,3.2,bundesliga
-hertha berlin,fortuna dusseldorf,2.1,3.4,3.5,bundesliga
-eintracht frankfurt,augsburg,2.95,2.35,3.45,bundesliga
-fortuna dusseldorf,bayern munchen,26.0,1.07,11.5,bundesliga
-vfb stuttgart,bayer leverkusen,5.8,1.52,4.4,bundesliga
-borussia monchengladbach,werder bremen,2.88,2.4,3.45,bundesliga
-augsburg,hoffenheim,4.9,1.67,4.0,bundesliga
-bayern munchen,borussia dortmund,2.06,3.15,4.0,bundesliga
-rb leipzig,vfl wolfsburg,2.35,2.88,3.55,bundesliga
-1. fc nurnberg,schalke 04,6.75,1.44,4.7,bundesliga
-werder bremen,sc freiburg,2.5,2.75,3.45,bundesliga
-mainz 05,sc freiburg,3.45,2.16,3.3,bundesliga
-vfl wolfsburg,hannover 96,2.6,2.8,3.25,bundesliga
-arsenal,bournemouth,1.88,3.8,3.75,premier_league
-fulham,huddersfield town,3.3,2.35,3.4,premier_league
-west ham,huddersfield town,2.25,3.4,3.2,premier_league
-tottenham,crystal palace,1.78,4.5,3.75,premier_league
-crystal palace,manchester united,7.5,1.4,4.75,premier_league
-cardiff city,everton,8.0,1.38,4.75,premier_league
-manchester united,manchester city,7.75,1.37,5.25,premier_league
-leicester city,brighton & hove albion,2.4,3.0,3.2,premier_league
-bournemouth,newcastle united,2.55,2.75,3.35,premier_league
-chelsea,tottenham,2.5,2.7,3.4,premier_league
-newcastle united,burnley,2.6,2.8,3.1,premier_league
-watford,southampton,3.0,2.45,3.2,premier_league
-liverpool,watford,1.45,6.25,4.75,premier_league
-fulham,liverpool,23.0,1.1,10.0,premier_league
-wolverhampton wanderers,arsenal,5.85,1.55,4.25,premier_league
-huddersfield town,wolverhampton wanderers,6.75,1.53,3.9,premier_league
-brighton & hove albion,cardiff city,2.95,2.55,3.1,premier_league
-southampton,fulham,2.5,2.7,3.4,premier_league
-burnley,leicester city,7.5,1.45,4.35,premier_league
-manchester city,west ham,1.28,10.0,5.5,premier_league
-everton,chelsea,8.5,1.35,5.0,premier_league
-nantes,rennes,3.4,2.2,3.3,ligue_1
-paris sg,monaco,1.33,7.5,5.6,ligue_1
-lyon,guingamp,1.62,5.1,4.1,ligue_1
-reims,saint-etienne,4.5,1.85,3.4,ligue_1
-montpellier,angers,2.55,3.0,3.1,ligue_1
-strasbourg,lille,4.6,1.8,3.55,ligue_1
-caen,bordeaux,4.0,1.95,3.35,ligue_1
-dijon,marseille,8.5,1.35,4.9,ligue_1
-amiens,toulouse,3.75,2.05,3.35,ligue_1
-nice,nimes olympique,2.7,2.65,3.3,ligue_1
-fiorentina,frosinone,1.78,4.9,3.45,serie_a
-fiorentina,bologna,2.15,3.45,3.35,serie_a
-roma,udinese,1.85,4.4,3.45,serie_a
-cagliari,spal,2.9,2.6,3.1,serie_a
-juventus,ac milan,1.82,4.25,3.65,serie_a
-chievo verona,napoli,20.0,1.11,9.5,serie_a
-parma,torino,7.0,1.45,4.4,serie_a
-napoli,genoa,1.6,5.6,3.95,serie_a
-udinese,empoli,3.15,2.35,3.25,serie_a
-bologna,chievo verona,2.6,2.9,3.1,serie_a
-sassuolo,parma,2.75,2.65,3.25,serie_a
-torino,cagliari,2.5,2.88,3.25,serie_a
-sampdoria,genoa,2.9,2.55,3.2,serie_a
-atalanta,empoli,1.72,4.9,3.65,serie_a
-spal,juventus,17.0,1.16,7.5,serie_a
-ac milan,lazio,3.2,2.25,3.35,serie_a
-lazio,sassuolo,1.87,4.1,3.6,serie_a
-sampdoria,roma,6.75,1.45,4.5,serie_a
-frosinone,inter,15.0,1.2,6.5,serie_a
-inter,atalanta,2.55,2.85,3.25,serie_a
+ado den haag,willem ii,3.75,1.95,3.6,eredivisie
+nac breda,pec zwolle,5.5,1.6,4.0,eredivisie
+excelsior rotterdam,az alkmaar,9.0,1.3,5.5,eredivisie
+heracles almelo,fc utrecht,5.4,1.6,4.5,eredivisie
+fc groningen,vvv venlo,2.25,3.2,3.6,eredivisie
+vvv venlo,vitesse,8.0,1.4,4.5,eredivisie
+fc emmen,fc groningen,4.5,1.72,3.9,eredivisie
+fc utrecht,sc heerenveen,2.65,2.5,3.5,eredivisie
+fortuna sittard,feyenoord,11.0,1.25,6.0,eredivisie
+de graafschap,ajax,29.0,1.05,13.0,eredivisie
+psv eindhoven,heracles almelo,1.35,8.5,5.0,eredivisie
+feyenoord,fc emmen,1.42,7.2,5.2,eredivisie
+vitesse,nac breda,1.62,5.5,4.25,eredivisie
+real madrid,huesca,1.3,9.35,6.1,la_liga
+rayo vallecano,real betis,6.2,1.5,4.7,la_liga
+valladolid,real sociedad,6.0,1.65,3.75,la_liga
+girona fc,sevilla,6.5,1.44,4.5,la_liga
+athletic club bilbao,alaves,2.75,2.6,3.1,la_liga
+atletico madrid,valladolid,1.75,5.5,3.2,la_liga
+fc barcelona,levante,1.3,8.0,5.75,la_liga
+real sociedad,getafe,3.1,2.4,3.0,la_liga
+levante,eibar,4.9,1.7,4.05,la_liga
+rayo vallecano,real madrid,15.0,1.12,9.0,la_liga
+real betis,espanyol,3.5,2.1,3.25,la_liga
+leganes,celta vigo,4.2,1.85,3.45,la_liga
+villarreal,huesca,2.15,3.2,3.4,la_liga
+girona fc,athletic club bilbao,4.1,1.97,3.45,la_liga
+valencia,eibar,2.6,2.8,3.1,la_liga
+hertha berlin,vfb stuttgart,2.75,2.6,3.3,bundesliga
+vfl wolfsburg,1. fc nurnberg,2.1,3.45,3.45,bundesliga
+werder bremen,borussia dortmund,6.75,1.45,4.5,bundesliga
+hannover 96,mainz 05,4.1,1.91,3.5,bundesliga
+borussia monchengladbach,hoffenheim,3.25,2.0,4.0,bundesliga
+vfb stuttgart,borussia monchengladbach,7.0,1.45,4.5,bundesliga
+bayern munchen,hannover 96,1.25,10.0,6.25,bundesliga
+sc freiburg,fortuna dusseldorf,2.7,2.65,3.3,bundesliga
+bayer leverkusen,eintracht frankfurt,2.88,2.35,3.55,bundesliga
+mainz 05,rb leipzig,6.25,1.45,4.75,bundesliga
+schalke 04,augsburg,2.5,2.85,3.35,bundesliga
+watford,everton,4.95,1.78,3.85,premier_league
+leicester city,crystal palace,3.0,2.45,3.2,premier_league
+newcastle united,huddersfield town,3.2,2.4,3.1,premier_league
+chelsea,brighton & hove albion,1.45,7.5,4.2,premier_league
+west ham,fulham,2.4,2.8,3.45,premier_league
+arsenal,southampton,1.9,4.0,3.65,premier_league
+burnley,tottenham,17.0,1.16,7.5,premier_league
+wolverhampton wanderers,newcastle united,2.76,2.9,3.15,premier_league
+everton,manchester city,14.0,1.2,7.5,premier_league
+manchester united,liverpool,5.5,1.6,4.0,premier_league
+cardiff city,watford,5.5,1.62,3.85,premier_league
+bournemouth,wolverhampton wanderers,3.8,1.95,3.5,premier_league
+caen,strasbourg,4.9,1.75,3.55,ligue_1
+bordeaux,marseille,5.3,1.72,3.55,ligue_1
+montpellier,nantes,2.9,2.55,3.15,ligue_1
+lille,nimes olympique,2.8,2.55,3.3,ligue_1
+paris sg,dijon,1.18,17.0,6.5,ligue_1
+strasbourg,reims,3.55,2.2,3.15,ligue_1
+reims,lille,4.1,2.0,3.25,ligue_1
+toulouse,caen,2.9,2.55,3.15,ligue_1
+monaco,lyon,7.25,1.52,3.9,ligue_1
+rennes,guingamp,2.47,3.0,3.2,ligue_1
+saint-etienne,nice,3.0,2.48,3.2,ligue_1
+angers,amiens,2.82,2.6,3.2,ligue_1
+bologna,empoli,3.9,1.98,3.4,serie_a
+udinese,inter,9.0,1.35,4.8,serie_a
+torino,ac milan,4.6,1.87,3.35,serie_a
+spal,genoa,4.2,1.98,3.25,serie_a
+atalanta,udinese,1.84,4.4,3.55,serie_a
+sassuolo,frosinone,1.9,4.0,3.5,serie_a
+fiorentina,sassuolo,2.7,2.7,3.2,serie_a
+chievo verona,parma,3.85,2.08,3.2,serie_a
+parma,sampdoria,4.2,1.85,3.5,serie_a
+napoli,cagliari,1.47,7.0,4.2,serie_a
+genoa,roma,8.25,1.35,5.0,serie_a
+lazio,atalanta,3.0,2.25,3.5,serie_a
+chievo verona,spal,3.6,2.05,3.4,serie_a
+empoli,fiorentina,4.7,1.7,3.8,serie_a
+juventus,torino,1.55,6.0,4.0,serie_a
+ac milan,bologna,1.7,5.0,3.65,serie_a

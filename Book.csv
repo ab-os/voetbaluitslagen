@@ -1,20 +1,46 @@
-date,league,home_team,away_team,outcome,odd,prob,expect,date_of_bet
-2018-11-09,bundesliga,hannover 96,vfl wolfsburg,home_win,2.800,0.433,1.212,5-11-2018
-2018-11-10,bundesliga,fortuna dusseldorf,hertha berlin,home_win,3.400,0.344,1.170,5-11-2018
-2018-11-24,bundesliga,schalke 04,1. fc nurnberg,tie,4.700,0.248,1.167,5-11-2018
-2018-11-25,bundesliga,borussia monchengladbach,hannover 96,away_win,6.100,0.198,1.210,5-11-2018
-2018-11-09,eredivisie,pec zwolle,willem ii,away_win,3.850,0.334,1.287,5-11-2018
-2018-11-09,la_liga,levante,real sociedad,home_win,2.800,0.412,1.153,5-11-2018
-2018-11-11,la_liga,rayo vallecano,villarreal,home_win,3.200,0.398,1.273,5-11-2018
-2018-11-10,ligue_1,guingamp,lyon,home_win,5.100,0.253,1.292,5-11-2018
-2018-11-11,ligue_1,marseille,dijon,away_win,8.500,0.159,1.349,5-11-2018
-2018-11-11,ligue_1,monaco,paris sg,home_win,7.500,0.165,1.234,5-11-2018
-2018-11-10,premier_league,leicester city,burnley,away_win,7.500,0.185,1.387,5-11-2018
-2018-11-10,premier_league,huddersfield town,west ham,home_win,3.400,0.362,1.229,5-11-2018
-2018-11-24,premier_league,manchester united,crystal palace,away_win,7.500,0.179,1.341,5-11-2018
-2018-11-24,premier_league,everton,cardiff city,away_win,8.000,0.181,1.452,5-11-2018
-2018-11-24,premier_league,everton,cardiff city,tie,4.750,0.254,1.205,5-11-2018
-2018-11-25,premier_league,wolverhampton wanderers,huddersfield town,away_win,6.750,0.171,1.155,5-11-2018
-2018-11-09,serie_a,frosinone,fiorentina,home_win,4.900,0.260,1.274,5-11-2018
-2018-11-25,serie_a,empoli,atalanta,home_win,4.900,0.255,1.248,5-11-2018
-2018-11-25,serie_a,napoli,chievo verona,tie,9.500,0.123,1.169,5-11-2018
+date,league,home_team,away_team,outcome,odd,prob,expect,date_of_bet,stake,payout
+09/11/2018,bundesliga,hannover 96,vfl wolfsburg,home_win,2.8,0.433,1.212,05/11/2018,5,14
+10/11/2018,bundesliga,fortuna dusseldorf,hertha berlin,home_win,3.4,0.344,1.17,05/11/2018,5,17
+24/11/2018,bundesliga,schalke 04,1. fc nurnberg,tie,4.7,0.248,1.167,05/11/2018,5,5.45
+25/11/2018,bundesliga,borussia monchengladbach,hannover 96,away_win,6.1,0.198,1.21,05/11/2018,5,
+09/11/2018,eredivisie,pec zwolle,willem ii,away_win,3.85,0.334,1.287,05/11/2018,5,18
+09/11/2018,la_liga,levante,real sociedad,home_win,2.8,0.412,1.153,05/11/2018,5,0
+11/11/2018,la_liga,rayo vallecano,villarreal,home_win,3.2,0.398,1.273,05/11/2018,5,0
+10/11/2018,ligue_1,guingamp,lyon,home_win,5.1,0.253,1.292,05/11/2018,5,0
+11/11/2018,ligue_1,marseille,dijon,away_win,8.5,0.159,1.349,05/11/2018,5,0
+11/11/2018,ligue_1,monaco,paris sg,home_win,7.5,0.165,1.234,05/11/2018,5,0
+10/11/2018,premier_league,leicester city,burnley,away_win,7.5,0.185,1.387,05/11/2018,5,0
+10/11/2018,premier_league,huddersfield town,west ham,home_win,3.4,0.362,1.229,05/11/2018,5,0
+24/11/2018,premier_league,manchester united,crystal palace,away_win,7.5,0.179,1.341,05/11/2018,5,
+24/11/2018,premier_league,everton,cardiff city,away_win,8,0.181,1.452,05/11/2018,5,
+24/11/2018,premier_league,everton,cardiff city,tie,4.75,0.254,1.205,05/11/2018,5,
+25/11/2018,premier_league,wolverhampton wanderers,huddersfield town,away_win,6.75,0.171,1.155,05/11/2018,5,
+09/11/2018,serie_a,frosinone,fiorentina,home_win,4.9,0.26,1.274,05/11/2018,5,0
+25/11/2018,serie_a,empoli,atalanta,home_win,4.9,0.255,1.248,05/11/2018,5,
+25/11/2018,serie_a,napoli,chievo verona,tie,9.5,0.123,1.169,05/11/2018,5,
+2018-12-14,bundesliga,1. fc nurnberg,vfl wolfsburg,home_win,3.450,0.363,1.252,9-12-2018
+2018-12-15,bundesliga,augsburg,schalke 04,home_win,2.850,0.405,1.153,9-12-2018
+2018-12-16,bundesliga,eintracht frankfurt,bayer leverkusen,home_win,2.350,0.505,1.187,9-12-2018
+2018-12-09,eredivisie,fc utrecht,heracles almelo,away_win,5.400,0.230,1.243,9-12-2018
+2018-12-09,eredivisie,vvv venlo,fc groningen,home_win,3.200,0.379,1.213,9-12-2018
+2018-12-09,eredivisie,fc emmen,feyenoord,home_win,7.200,0.164,1.181,9-12-2018
+2018-12-09,eredivisie,nac breda,vitesse,home_win,5.500,0.240,1.319,9-12-2018
+2018-12-09,eredivisie,fc emmen,feyenoord,tie,5.200,0.228,1.185,9-12-2018
+2018-12-15,eredivisie,pec zwolle,nac breda,away_win,5.500,0.237,1.306,9-12-2018
+2018-12-09,la_liga,real betis,rayo vallecano,away_win,6.200,0.200,1.241,9-12-2018
+2018-12-09,la_liga,huesca,real madrid,home_win,9.350,0.183,1.715,9-12-2018
+2018-12-09,la_liga,huesca,real madrid,tie,6.100,0.195,1.191,9-12-2018
+2018-12-09,la_liga,real betis,rayo vallecano,tie,4.700,0.250,1.173,9-12-2018
+2018-12-15,la_liga,valladolid,atletico madrid,home_win,5.500,0.245,1.345,9-12-2018
+2018-12-15,la_liga,eibar,valencia,home_win,2.800,0.426,1.192,9-12-2018
+2018-12-16,la_liga,huesca,villarreal,home_win,3.200,0.412,1.320,9-12-2018
+2018-12-17,la_liga,alaves,athletic club bilbao,home_win,2.600,0.449,1.168,9-12-2018
+2018-12-09,ligue_1,lille,reims,home_win,2.000,0.593,1.185,9-12-2018
+2018-12-15,ligue_1,dijon,paris sg,home_win,17.000,0.124,2.115,9-12-2018
+2018-12-16,ligue_1,lyon,monaco,away_win,7.250,0.171,1.238,9-12-2018
+2018-12-09,premier_league,newcastle united,wolverhampton wanderers,home_win,2.900,0.423,1.226,9-12-2018
+2018-12-10,premier_league,everton,watford,away_win,4.950,0.274,1.356,9-12-2018
+2018-12-15,premier_league,watford,cardiff city,away_win,5.500,0.215,1.180,9-12-2018
+2018-12-16,serie_a,frosinone,sassuolo,home_win,4.000,0.317,1.268,9-12-2018
+2018-12-16,serie_a,cagliari,napoli,home_win,7.000,0.171,1.199,9-12-2018
+2018-12-18,serie_a,bologna,ac milan,home_win,5.000,0.243,1.214,9-12-2018

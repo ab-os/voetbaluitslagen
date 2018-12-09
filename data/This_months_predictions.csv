@@ -1,119 +1,187 @@
 date,league,home_team,away_team,prob_home_win,prob_away_win,prob_tie
-2018-11-05,barclays premier league,huddersfield town,fulham,0.4252,0.2804,0.2945
-2018-11-10,barclays premier league,cardiff city,brighton and hove albion,0.4386,0.2765,0.2849
-2018-11-10,barclays premier league,leicester city,burnley,0.5699,0.1849,0.2452
-2018-11-10,barclays premier league,southampton,watford,0.4228,0.2966,0.2806
-2018-11-10,barclays premier league,newcastle,afc bournemouth,0.4079,0.3128,0.2792
-2018-11-10,barclays premier league,huddersfield town,west ham united,0.3616,0.3347,0.3037
-2018-11-10,barclays premier league,crystal palace,tottenham hotspur,0.2334,0.5101,0.2566
-2018-11-11,barclays premier league,liverpool,fulham,0.877,0.0274,0.0956
-2018-11-11,barclays premier league,chelsea,everton,0.7222,0.0952,0.1826
-2018-11-11,barclays premier league,manchester city,manchester united,0.8048,0.0607,0.1345
-2018-11-11,barclays premier league,arsenal,wolverhampton,0.6753,0.1233,0.2013
-2018-11-24,barclays premier league,everton,cardiff city,0.5648,0.1815,0.2537
-2018-11-24,barclays premier league,west ham united,manchester city,0.1079,0.7196,0.1725
-2018-11-24,barclays premier league,manchester united,crystal palace,0.5847,0.1788,0.2365
-2018-11-24,barclays premier league,fulham,southampton,0.3639,0.3618,0.2742
-2018-11-24,barclays premier league,watford,liverpool,0.1833,0.5858,0.2309
-2018-11-24,barclays premier league,brighton and hove albion,leicester city,0.3309,0.39,0.2791
-2018-11-24,barclays premier league,tottenham hotspur,chelsea,0.3777,0.3626,0.2597
-2018-11-25,barclays premier league,afc bournemouth,arsenal,0.2913,0.4732,0.2355
-2018-11-25,barclays premier league,wolverhampton,huddersfield town,0.5387,0.1711,0.2902
-2018-11-26,barclays premier league,burnley,newcastle,0.3664,0.3378,0.2958
-2018-11-09,dutch eredivisie,pec zwolle,willem ii,0.3808,0.3342,0.285
-2018-11-10,dutch eredivisie,emmen,nac,0.4283,0.28800000000000003,0.2837
-2018-11-10,dutch eredivisie,vitesse,fc utrecht,0.4827,0.2311,0.2862
-2018-11-10,dutch eredivisie,de graafschap,psv,0.0563,0.818,0.1257
-2018-11-10,dutch eredivisie,vvv venlo,fortuna sittard,0.4101,0.2922,0.2977
-2018-11-11,dutch eredivisie,fc groningen,heerenveen,0.4051,0.3337,0.2612
-2018-11-11,dutch eredivisie,ado den haag,az,0.2696,0.4846,0.2458
-2018-11-11,dutch eredivisie,excelsior,ajax,0.0374,0.8658,0.0967
-2018-11-11,dutch eredivisie,heracles,feyenoord,0.2449,0.5356,0.2195
-2018-11-24,dutch eredivisie,nac,ajax,0.0544,0.8135,0.1321
-2018-11-24,dutch eredivisie,pec zwolle,ado den haag,0.4298,0.2822,0.2881
-2018-11-24,dutch eredivisie,fortuna sittard,heracles,0.4224,0.3392,0.2384
-2018-11-24,dutch eredivisie,psv,heerenveen,0.848,0.0472,0.1048
-2018-11-25,dutch eredivisie,emmen,excelsior,0.4551,0.2815,0.2634
-2018-11-25,dutch eredivisie,willem ii,vitesse,0.3197,0.4076,0.2727
-2018-11-25,dutch eredivisie,fc utrecht,de graafschap,0.6298,0.1298,0.2405
-2018-11-25,dutch eredivisie,feyenoord,fc groningen,0.7414,0.0832,0.1755
-2018-11-25,dutch eredivisie,vvv venlo,az,0.2895,0.4221,0.2884
-2018-11-09,french ligue 1,lille,strasbourg,0.5371,0.1985,0.2643
-2018-11-10,french ligue 1,guingamp,lyon,0.2533,0.4944,0.2523
-2018-11-10,french ligue 1,st etienne,reims,0.5378,0.1939,0.2683
-2018-11-10,french ligue 1,toulouse,amiens,0.45299999999999996,0.2485,0.2985
-2018-11-10,french ligue 1,nimes,nice,0.4086,0.3082,0.2832
-2018-11-10,french ligue 1,angers,montpellier,0.3512,0.3472,0.3016
-2018-11-11,french ligue 1,bordeaux,caen,0.4869,0.2223,0.2908
-2018-11-11,french ligue 1,marseille,dijon fco,0.6199,0.1587,0.2213
-2018-11-11,french ligue 1,stade rennes,nantes,0.4602,0.2568,0.28300000000000003
-2018-11-11,french ligue 1,as monaco,paris saint-germain,0.1646,0.6405,0.1949
-2018-11-23,french ligue 1,lyon,st etienne,0.5627,0.2034,0.2339
-2018-11-24,french ligue 1,paris saint-germain,toulouse,0.8942,0.0234,0.0824
-2018-11-24,french ligue 1,strasbourg,nimes,0.4726,0.2557,0.2716
-2018-11-24,french ligue 1,nantes,angers,0.4908,0.2375,0.2717
-2018-11-24,french ligue 1,caen,as monaco,0.3437,0.3653,0.2911
-2018-11-24,french ligue 1,dijon fco,bordeaux,0.418,0.3018,0.2802
-2018-11-24,french ligue 1,reims,guingamp,0.4632,0.2426,0.2943
-2018-11-25,french ligue 1,montpellier,stade rennes,0.4578,0.242,0.3002
-2018-11-25,french ligue 1,nice,lille,0.4146,0.29600000000000004,0.2894
-2018-11-25,french ligue 1,amiens,marseille,0.2789,0.4439,0.2772
-2018-11-09,german bundesliga,hannover 96,vfl wolfsburg,0.4327,0.294,0.2733
-2018-11-10,german bundesliga,sc freiburg,mainz,0.4451,0.2685,0.2863
-2018-11-10,german bundesliga,1. fc nurnberg,vfb stuttgart,0.4025,0.3121,0.2854
-2018-11-10,german bundesliga,werder bremen,borussia monchengladbach,0.3653,0.3837,0.251
-2018-11-10,german bundesliga,tsg hoffenheim,fc augsburg,0.6388,0.1614,0.1998
-2018-11-10,german bundesliga,fortuna dusseldorf,hertha berlin,0.344,0.3892,0.2669
-2018-11-10,german bundesliga,borussia dortmund,bayern munich,0.2845,0.4846,0.2309
-2018-11-11,german bundesliga,rb leipzig,bayer leverkusen,0.5371,0.2362,0.2267
-2018-11-11,german bundesliga,eintracht frankfurt,schalke 04,0.4787,0.2432,0.2781
-2018-11-23,german bundesliga,bayer leverkusen,vfb stuttgart,0.6072,0.1735,0.2192
-2018-11-24,german bundesliga,bayern munich,fortuna dusseldorf,0.9217,0.0143,0.064
-2018-11-24,german bundesliga,fc augsburg,eintracht frankfurt,0.3666,0.3736,0.2598
-2018-11-24,german bundesliga,hertha berlin,tsg hoffenheim,0.2899,0.4731,0.237
-2018-11-24,german bundesliga,vfl wolfsburg,rb leipzig,0.2906,0.4416,0.2678
-2018-11-24,german bundesliga,mainz,borussia dortmund,0.2232,0.5332,0.2436
-2018-11-24,german bundesliga,schalke 04,1. fc nurnberg,0.6144,0.1372,0.2483
-2018-11-25,german bundesliga,sc freiburg,werder bremen,0.3888,0.3422,0.26899999999999996
-2018-11-25,german bundesliga,borussia monchengladbach,hannover 96,0.5804,0.1984,0.2212
-2018-11-09,italy serie a,frosinone,fiorentina,0.26,0.4701,0.2699
-2018-11-10,italy serie a,torino,parma,0.6038,0.155,0.2412
-2018-11-10,italy serie a,spal,cagliari,0.4201,0.29600000000000004,0.2839
-2018-11-10,italy serie a,genoa,napoli,0.1602,0.6211,0.2187
-2018-11-11,italy serie a,atalanta,internazionale,0.3485,0.3895,0.262
-2018-11-11,italy serie a,as roma,sampdoria,0.65,0.14400000000000002,0.2059
-2018-11-11,italy serie a,chievo verona,bologna,0.3693,0.3435,0.2872
-2018-11-11,italy serie a,empoli,udinese,0.4485,0.2655,0.28600000000000003
-2018-11-11,italy serie a,sassuolo,lazio,0.266,0.4859,0.2481
-2018-11-11,italy serie a,ac milan,juventus,0.2419,0.5053,0.2527
-2018-11-24,italy serie a,udinese,as roma,0.2283,0.5225,0.2492
-2018-11-24,italy serie a,juventus,spal,0.8586,0.0277,0.1136
-2018-11-24,italy serie a,internazionale,frosinone,0.8186,0.0458,0.1356
-2018-11-25,italy serie a,parma,sassuolo,0.3071,0.41700000000000004,0.2759
-2018-11-25,italy serie a,napoli,chievo verona,0.8418,0.0351,0.1231
-2018-11-25,italy serie a,empoli,atalanta,0.2546,0.4905,0.2549
-2018-11-25,italy serie a,bologna,fiorentina,0.2835,0.4365,0.28
-2018-11-25,italy serie a,lazio,ac milan,0.4503,0.2964,0.2533
-2018-11-25,italy serie a,genoa,sampdoria,0.3875,0.3443,0.2681
-2018-11-26,italy serie a,cagliari,torino,0.344,0.3753,0.2807
-2018-11-05,spanish primera division,espanyol,athletic bilbao,0.5438,0.1914,0.2648
-2018-11-09,spanish primera division,levante,real sociedad,0.4118,0.3335,0.2547
-2018-11-10,spanish primera division,real valladolid,eibar,0.4057,0.3007,0.2936
-2018-11-10,spanish primera division,getafe,valencia,0.4253,0.2677,0.307
-2018-11-10,spanish primera division,atletico madrid,athletic bilbao,0.6799,0.10300000000000001,0.2171
-2018-11-10,spanish primera division,girona fc,leganes,0.4612,0.261,0.2777
-2018-11-11,spanish primera division,alaves,sd huesca,0.5068,0.2255,0.2677
-2018-11-11,spanish primera division,barcelona,real betis,0.8305,0.0493,0.1202
-2018-11-11,spanish primera division,rayo vallecano,villarreal,0.3977,0.3474,0.2549
-2018-11-11,spanish primera division,sevilla fc,espanyol,0.5631,0.1975,0.2393
-2018-11-11,spanish primera division,celta vigo,real madrid,0.2026,0.6065,0.1909
-2018-11-23,spanish primera division,leganes,alaves,0.4687,0.2426,0.2887
-2018-11-24,spanish primera division,eibar,real madrid,0.239,0.5369,0.2241
-2018-11-24,spanish primera division,valencia,rayo vallecano,0.623,0.1446,0.2324
-2018-11-24,spanish primera division,sd huesca,levante,0.45,0.2995,0.2505
-2018-11-24,spanish primera division,atletico madrid,barcelona,0.3499,0.4073,0.2429
-2018-11-25,spanish primera division,athletic bilbao,getafe,0.4234,0.2817,0.2949
-2018-11-25,spanish primera division,sevilla fc,real valladolid,0.6541,0.1359,0.21
-2018-11-25,spanish primera division,espanyol,girona fc,0.5373,0.2007,0.262
-2018-11-25,spanish primera division,villarreal,real betis,0.4823,0.2535,0.2642
-2018-11-26,spanish primera division,real sociedad,celta vigo,0.5015,0.2538,0.2447
+2018-12-09,barclays premier league,newcastle,wolverhampton,0.4229,0.28,0.2971
+2018-12-10,barclays premier league,everton,watford,0.4477,0.27399999999999997,0.2783
+2018-12-15,barclays premier league,manchester city,everton,0.8786,0.0249,0.0965
+2018-12-15,barclays premier league,huddersfield town,newcastle,0.4009,0.2788,0.3203
+2018-12-15,barclays premier league,watford,cardiff city,0.5195,0.2146,0.2659
+2018-12-15,barclays premier league,wolverhampton,afc bournemouth,0.4671,0.2658,0.2672
+2018-12-15,barclays premier league,tottenham hotspur,burnley,0.8271,0.0441,0.1288
+2018-12-15,barclays premier league,crystal palace,leicester city,0.45399999999999996,0.2583,0.2877
+2018-12-15,barclays premier league,fulham,west ham united,0.3731,0.3617,0.2652
+2018-12-16,barclays premier league,southampton,arsenal,0.2331,0.528,0.2389
+2018-12-16,barclays premier league,brighton and hove albion,chelsea,0.1505,0.6265,0.223
+2018-12-16,barclays premier league,liverpool,manchester united,0.68,0.1212,0.1987
+2018-12-21,barclays premier league,wolverhampton,liverpool,0.1665,0.598,0.2355
+2018-12-22,barclays premier league,arsenal,burnley,0.7946,0.0621,0.1433
+2018-12-22,barclays premier league,manchester city,crystal palace,0.8497,0.0362,0.1141
+2018-12-22,barclays premier league,huddersfield town,southampton,0.3717,0.3176,0.3107
+2018-12-22,barclays premier league,afc bournemouth,brighton and hove albion,0.491,0.251,0.258
+2018-12-22,barclays premier league,west ham united,watford,0.4295,0.2999,0.2706
+2018-12-22,barclays premier league,newcastle,fulham,0.4892,0.2404,0.2704
+2018-12-22,barclays premier league,chelsea,leicester city,0.6697,0.1174,0.2129
+2018-12-22,barclays premier league,cardiff city,manchester united,0.2389,0.5088,0.2522
+2018-12-23,barclays premier league,everton,tottenham hotspur,0.2714,0.4693,0.2594
+2018-12-26,barclays premier league,fulham,wolverhampton,0.3532,0.363,0.2838
+2018-12-26,barclays premier league,burnley,everton,0.29100000000000004,0.4318,0.2773
+2018-12-26,barclays premier league,tottenham hotspur,afc bournemouth,0.7306,0.0986,0.1708
+2018-12-26,barclays premier league,leicester city,manchester city,0.1311,0.6737,0.1952
+2018-12-26,barclays premier league,crystal palace,cardiff city,0.5263,0.2031,0.2707
+2018-12-26,barclays premier league,manchester united,huddersfield town,0.6594,0.1135,0.2271
+2018-12-26,barclays premier league,liverpool,newcastle,0.8275,0.0389,0.1335
+2018-12-26,barclays premier league,brighton and hove albion,arsenal,0.2128,0.5517,0.2356
+2018-12-26,barclays premier league,watford,chelsea,0.2465,0.4945,0.259
+2018-12-27,barclays premier league,southampton,west ham united,0.4072,0.3221,0.2707
+2018-12-29,barclays premier league,leicester city,cardiff city,0.5389,0.1946,0.2664
+2018-12-29,barclays premier league,brighton and hove albion,everton,0.3421,0.3717,0.2862
+2018-12-29,barclays premier league,fulham,huddersfield town,0.4311,0.2693,0.2996
+2018-12-29,barclays premier league,tottenham hotspur,wolverhampton,0.6656,0.1218,0.2126
+2018-12-29,barclays premier league,watford,newcastle,0.5144,0.2138,0.2718
+2018-12-29,barclays premier league,liverpool,arsenal,0.5897,0.1859,0.2244
+2018-12-30,barclays premier league,crystal palace,chelsea,0.226,0.5151,0.2589
+2018-12-30,barclays premier league,southampton,manchester city,0.11,0.7168,0.1732
+2018-12-30,barclays premier league,burnley,west ham united,0.3107,0.4197,0.2695
+2018-12-30,barclays premier league,manchester united,afc bournemouth,0.6168,0.1697,0.2135
+2018-12-09,dutch eredivisie,fc utrecht,heracles,0.5395,0.2302,0.2303
+2018-12-09,dutch eredivisie,emmen,feyenoord,0.16399999999999998,0.6082,0.2278
+2018-12-09,dutch eredivisie,vvv venlo,fc groningen,0.379,0.3288,0.2922
+2018-12-09,dutch eredivisie,nac,vitesse,0.2398,0.5029,0.2573
+2018-12-14,dutch eredivisie,willem ii,ado den haag,0.4806,0.272,0.2474
+2018-12-15,dutch eredivisie,pec zwolle,nac,0.4988,0.2375,0.2637
+2018-12-15,dutch eredivisie,az,excelsior,0.7283,0.107,0.1647
+2018-12-15,dutch eredivisie,heracles,psv,0.084,0.7835,0.1325
+2018-12-15,dutch eredivisie,vitesse,vvv venlo,0.6124,0.1428,0.2449
+2018-12-16,dutch eredivisie,heerenveen,fc utrecht,0.4123,0.3344,0.2533
+2018-12-16,dutch eredivisie,ajax,de graafschap,0.9602,0.0049,0.0349
+2018-12-16,dutch eredivisie,fc groningen,emmen,0.5249,0.2041,0.271
+2018-12-16,dutch eredivisie,feyenoord,fortuna sittard,0.7819,0.0716,0.1465
+2018-12-21,dutch eredivisie,vvv venlo,pec zwolle,0.4679,0.248,0.2841
+2018-12-22,dutch eredivisie,fortuna sittard,fc groningen,0.4033,0.3309,0.2658
+2018-12-22,dutch eredivisie,nac,heerenveen,0.2597,0.5045,0.2359
+2018-12-22,dutch eredivisie,psv,az,0.7632,0.0823,0.1545
+2018-12-22,dutch eredivisie,excelsior,heracles,0.3231,0.4543,0.2226
+2018-12-23,dutch eredivisie,fc utrecht,ajax,0.1103,0.7061,0.1836
+2018-12-23,dutch eredivisie,de graafschap,vitesse,0.1763,0.5707,0.253
+2018-12-23,dutch eredivisie,ado den haag,feyenoord,0.1609,0.6256,0.2135
+2018-12-23,dutch eredivisie,emmen,willem ii,0.3957,0.3367,0.2677
+2018-12-09,french ligue 1,strasbourg,caen,0.5086,0.2053,0.2861
+2018-12-09,french ligue 1,lille,reims,0.5925,0.1412,0.2663
+2018-12-09,french ligue 1,st etienne,marseille,0.4084,0.3289,0.2627
+2018-12-14,french ligue 1,nice,st etienne,0.4048,0.3037,0.2915
+2018-12-15,french ligue 1,dijon fco,paris saint-germain,0.1244,0.7020000000000001,0.1736
+2018-12-15,french ligue 1,caen,toulouse,0.4369,0.2618,0.3013
+2018-12-15,french ligue 1,reims,strasbourg,0.38299999999999995,0.3066,0.3103
+2018-12-15,french ligue 1,nantes,montpellier,0.3765,0.32299999999999995,0.3005
+2018-12-15,french ligue 1,amiens,angers,0.3921,0.3077,0.3002
+2018-12-16,french ligue 1,lyon,as monaco,0.6058,0.1707,0.2235
+2018-12-16,french ligue 1,nimes,lille,0.3514,0.3668,0.2818
+2018-12-16,french ligue 1,guingamp,stade rennes,0.3773,0.3402,0.2825
+2018-12-16,french ligue 1,marseille,bordeaux,0.5674,0.1847,0.2479
+2018-12-22,french ligue 1,bordeaux,amiens,0.5516,0.1777,0.2707
+2018-12-22,french ligue 1,stade rennes,nimes,0.4916,0.2424,0.266
+2018-12-22,french ligue 1,as monaco,guingamp,0.5352,0.2047,0.2601
+2018-12-22,french ligue 1,lille,toulouse,0.5541,0.1821,0.2637
+2018-12-22,french ligue 1,angers,marseille,0.3462,0.3772,0.2766
+2018-12-22,french ligue 1,paris saint-germain,nantes,0.8338,0.0476,0.1186
+2018-12-22,french ligue 1,montpellier,lyon,0.37200000000000005,0.3521,0.2759
+2018-12-22,french ligue 1,st etienne,dijon fco,0.5528,0.1982,0.249
+2018-12-22,french ligue 1,strasbourg,nice,0.4244,0.2707,0.3049
+2018-12-22,french ligue 1,reims,caen,0.4697,0.2172,0.3131
+2018-12-09,german bundesliga,mainz,hannover 96,0.4582,0.26899999999999996,0.2728
+2018-12-09,german bundesliga,borussia monchengladbach,vfb stuttgart,0.6163,0.1589,0.2248
+2018-12-14,german bundesliga,1. fc nurnberg,vfl wolfsburg,0.363,0.3513,0.2856
+2018-12-15,german bundesliga,vfb stuttgart,hertha berlin,0.4162,0.3087,0.2752
+2018-12-15,german bundesliga,hannover 96,bayern munich,0.0881,0.772,0.1399
+2018-12-15,german bundesliga,fc augsburg,schalke 04,0.4045,0.3229,0.2726
+2018-12-15,german bundesliga,tsg hoffenheim,borussia monchengladbach,0.4945,0.2817,0.2238
+2018-12-15,german bundesliga,fortuna dusseldorf,sc freiburg,0.3963,0.337,0.2667
+2018-12-15,german bundesliga,borussia dortmund,werder bremen,0.7073,0.1128,0.1798
+2018-12-16,german bundesliga,rb leipzig,mainz,0.6838,0.1018,0.2144
+2018-12-16,german bundesliga,eintracht frankfurt,bayer leverkusen,0.5051,0.2526,0.2423
+2018-12-18,german bundesliga,borussia monchengladbach,1. fc nurnberg,0.6502,0.1432,0.2066
+2018-12-18,german bundesliga,fortuna dusseldorf,borussia dortmund,0.1716,0.6196,0.2088
+2018-12-18,german bundesliga,hertha berlin,fc augsburg,0.4296,0.3148,0.2555
+2018-12-18,german bundesliga,vfl wolfsburg,vfb stuttgart,0.4989,0.2206,0.2806
+2018-12-19,german bundesliga,schalke 04,bayer leverkusen,0.4217,0.3091,0.2691
+2018-12-19,german bundesliga,bayern munich,rb leipzig,0.6753,0.134,0.1906
+2018-12-19,german bundesliga,sc freiburg,hannover 96,0.4947,0.2526,0.2526
+2018-12-19,german bundesliga,mainz,eintracht frankfurt,0.2995,0.4269,0.2736
+2018-12-19,german bundesliga,werder bremen,tsg hoffenheim,0.344,0.4226,0.2334
+2018-12-21,german bundesliga,borussia dortmund,borussia monchengladbach,0.5869,0.1961,0.2169
+2018-12-22,german bundesliga,1. fc nurnberg,sc freiburg,0.3688,0.3567,0.2745
+2018-12-22,german bundesliga,bayer leverkusen,hertha berlin,0.5549,0.2123,0.2328
+2018-12-22,german bundesliga,rb leipzig,werder bremen,0.5884,0.1824,0.2292
+2018-12-22,german bundesliga,vfb stuttgart,schalke 04,0.33299999999999996,0.3733,0.2937
+2018-12-22,german bundesliga,hannover 96,fortuna dusseldorf,0.4834,0.2649,0.2517
+2018-12-22,german bundesliga,eintracht frankfurt,bayern munich,0.2202,0.5645,0.2153
+2018-12-23,german bundesliga,fc augsburg,vfl wolfsburg,0.4505,0.2803,0.2692
+2018-12-23,german bundesliga,tsg hoffenheim,mainz,0.616,0.1669,0.2171
+2018-12-09,italy serie a,sassuolo,fiorentina,0.3488,0.3646,0.2866
+2018-12-09,italy serie a,udinese,atalanta,0.2504,0.4944,0.2551
+2018-12-09,italy serie a,empoli,bologna,0.4843,0.2541,0.2616
+2018-12-09,italy serie a,parma,chievo verona,0.4618,0.2631,0.2751
+2018-12-09,italy serie a,genoa,spal,0.4803,0.2545,0.2652
+2018-12-09,italy serie a,ac milan,torino,0.5502,0.1943,0.2555
+2018-12-15,italy serie a,internazionale,udinese,0.7384,0.0793,0.1824
+2018-12-15,italy serie a,torino,juventus,0.1536,0.6152,0.2313
+2018-12-16,italy serie a,spal,chievo verona,0.4811,0.2452,0.2737
+2018-12-16,italy serie a,frosinone,sassuolo,0.3169,0.4052,0.2779
+2018-12-16,italy serie a,sampdoria,parma,0.5233,0.2251,0.2516
+2018-12-16,italy serie a,fiorentina,empoli,0.5703,0.1858,0.2439
+2018-12-16,italy serie a,cagliari,napoli,0.1713,0.6009,0.2278
+2018-12-16,italy serie a,as roma,genoa,0.6715,0.1363,0.1922
+2018-12-17,italy serie a,atalanta,lazio,0.4328,0.3191,0.2481
+2018-12-18,italy serie a,bologna,ac milan,0.2428,0.4944,0.2628
+2018-12-22,italy serie a,lazio,cagliari,0.6256,0.1548,0.2196
+2018-12-22,italy serie a,udinese,frosinone,0.5336,0.1971,0.2693
+2018-12-22,italy serie a,genoa,atalanta,0.2637,0.496,0.2403
+2018-12-22,italy serie a,empoli,sampdoria,0.4098,0.3334,0.2568
+2018-12-22,italy serie a,ac milan,fiorentina,0.4696,0.255,0.2753
+2018-12-22,italy serie a,napoli,spal,0.81,0.0472,0.1427
+2018-12-22,italy serie a,sassuolo,torino,0.3973,0.3198,0.2829
+2018-12-22,italy serie a,parma,bologna,0.4395,0.2807,0.2798
+2018-12-22,italy serie a,chievo verona,internazionale,0.1495,0.6395,0.21100000000000002
+2018-12-22,italy serie a,juventus,as roma,0.6503,0.1433,0.2064
+2018-12-26,italy serie a,frosinone,ac milan,0.2003,0.5539999999999999,0.2457
+2018-12-26,italy serie a,bologna,lazio,0.2207,0.535,0.2443
+2018-12-26,italy serie a,fiorentina,parma,0.6155,0.146,0.2385
+2018-12-26,italy serie a,spal,udinese,0.4055,0.3012,0.2932
+2018-12-26,italy serie a,atalanta,juventus,0.2467,0.5064,0.2469
+2018-12-26,italy serie a,sampdoria,chievo verona,0.5624,0.1956,0.242
+2018-12-26,italy serie a,cagliari,genoa,0.4482,0.2862,0.2656
+2018-12-26,italy serie a,as roma,sassuolo,0.6046,0.1752,0.2202
+2018-12-26,italy serie a,torino,empoli,0.5306,0.2175,0.2519
+2018-12-26,italy serie a,internazionale,napoli,0.3974,0.3366,0.2661
+2018-12-29,italy serie a,juventus,sampdoria,0.8273,0.0434,0.1294
+2018-12-29,italy serie a,chievo verona,frosinone,0.4638,0.2611,0.2751
+2018-12-29,italy serie a,udinese,cagliari,0.4152,0.2974,0.2874
+2018-12-29,italy serie a,lazio,torino,0.5445,0.2082,0.2474
+2018-12-29,italy serie a,sassuolo,atalanta,0.3029,0.4408,0.2564
+2018-12-29,italy serie a,genoa,fiorentina,0.319,0.4067,0.2743
+2018-12-29,italy serie a,parma,as roma,0.2122,0.5599,0.2279
+2018-12-29,italy serie a,empoli,internazionale,0.2044,0.5682,0.2274
+2018-12-29,italy serie a,napoli,bologna,0.8203,0.0431,0.1366
+2018-12-29,italy serie a,ac milan,spal,0.6391,0.1356,0.2253
+2018-12-09,spanish primera division,eibar,levante,0.5909,0.1797,0.2293
+2018-12-09,spanish primera division,sd huesca,real madrid,0.1834,0.6214,0.1953
+2018-12-09,spanish primera division,real sociedad,real valladolid,0.5783,0.1659,0.2558
+2018-12-09,spanish primera division,real betis,rayo vallecano,0.5503,0.2001,0.2496
+2018-12-10,spanish primera division,athletic bilbao,girona fc,0.4966,0.2485,0.2549
+2018-12-14,spanish primera division,celta vigo,leganes,0.4781,0.2668,0.2551
+2018-12-15,spanish primera division,getafe,real sociedad,0.4573,0.2523,0.2904
+2018-12-15,spanish primera division,real valladolid,atletico madrid,0.2446,0.4755,0.2799
+2018-12-15,spanish primera division,real madrid,rayo vallecano,0.8319,0.0544,0.1137
+2018-12-15,spanish primera division,eibar,valencia,0.4257,0.2762,0.2982
+2018-12-16,spanish primera division,sevilla fc,girona fc,0.6629,0.1422,0.195
+2018-12-16,spanish primera division,espanyol,real betis,0.4404,0.2815,0.2781
+2018-12-16,spanish primera division,sd huesca,villarreal,0.4125,0.3253,0.2622
+2018-12-16,spanish primera division,levante,barcelona,0.1291,0.721,0.1499
+2018-12-17,spanish primera division,alaves,athletic bilbao,0.4491,0.2753,0.2757
+2018-12-21,spanish primera division,girona fc,getafe,0.4111,0.3051,0.2838
+2018-12-21,spanish primera division,real sociedad,alaves,0.5395,0.1978,0.2627
+2018-12-22,spanish primera division,real betis,eibar,0.436,0.2756,0.2885
+2018-12-22,spanish primera division,atletico madrid,espanyol,0.6246,0.1395,0.2358
+2018-12-22,spanish primera division,barcelona,celta vigo,0.8094,0.0729,0.1177
+2018-12-22,spanish primera division,athletic bilbao,real valladolid,0.5193,0.2128,0.2679
+2018-12-23,spanish primera division,valencia,sd huesca,0.6288,0.1353,0.2359
+2018-12-23,spanish primera division,leganes,sevilla fc,0.3578,0.3813,0.2609
+2018-12-23,spanish primera division,rayo vallecano,levante,0.4565,0.3015,0.242
