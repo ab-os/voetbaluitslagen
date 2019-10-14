@@ -4,6 +4,8 @@
 venv/
 .vscode/
 __pycache__/
+recyclebin/
+tmp/
 
 # files
 *.log
