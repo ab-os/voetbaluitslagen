@@ -1,5 +1,3 @@
-"""Scraper for https://www.unibet.eu/"""
-
 import numpy as np
 import pandas as pd
 import re
