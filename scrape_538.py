@@ -1,6 +1,6 @@
-""" Scrape https://projects.fivethirtyeight.com for soccer predictions
+""" Scrape https://projects.fivethirtyeight.com for football predictions
 
-Run this file to scrape all available predictions for various soccer leagues. Results are stored in ./data/538/
+Run this file to scrape all available predictions for various leagues. Results are stored in ./data/538/
 
 """
 
@@ -36,7 +36,7 @@ def clean_text(text):
     return (
         unicodedata.normalize("NFKD", text)
         .encode(encoding="ascii", errors="ignore")
-        .decode("utf-8")
+        .decode("ascii")
         .lower()
         .replace(" ", "")
     )
@@ -49,12 +49,12 @@ def scrape_538(url, verbose=True, save_html=False):
     page = requests.get(url)
     tree = html.fromstring(page.content)
 
-    # For debugging: Write the html to a file so you can view it in a browser
+    # For debugging: Save the html so you can view it in a browser
     if save_html:
-        with open("./data/538/" + re.split(r"/", url)[-1] + ".html", "w") as f:
+        with open("./data/538/html/" + re.split("/", url)[-1] + ".html", "w") as f:
             # page.content = bytes and page.text = str
-            f.write(str(page.text))
-            print("Saved as: ./data/538/" + re.split(r"/", url)[-1] + ".html")
+            f.write(page.text)
+            print("HTML saved as: ./data/538/html/" + re.split("/", url)[-1] + ".html")
 
     # Extract all matches
     matches = tree.cssselect(".games-container.upcoming .match-container")
@@ -92,6 +92,6 @@ def scrape_538(url, verbose=True, save_html=False):
 if __name__ == "__main__":
     # Scrape all URLS
     for url in URLS_538:
-        df = scrape_538(url, verbose=True, save_html=True)
-        df.to_csv("./data/538/" + re.split(r"/", url)[-1] + ".csv")
-        print("Saved as: ./data/538/" + re.split(r"/", url)[-1] + ".csv")
+        df = scrape_538(url, verbose=True, save_html=False)
+        df.to_csv("./data/538/" + re.split("/", url)[-1] + ".csv")
+        print("Saved as: ./data/538/" + re.split("/", url)[-1] + ".csv")
