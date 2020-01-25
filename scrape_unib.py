@@ -30,7 +30,7 @@ def wait_for_page_ready(driver):
 def get_html_from_url(url):
     # Open a webbrowser, visit Unib and return the html code
     driver = webdriver.Firefox()
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(30)
     driver.get(url)
 
     try:
@@ -90,14 +90,14 @@ def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
         with open(read_from_html, "r") as f:
             html = f.read()
     else:
-        # Fire up a browser and extract the html code
+        # Fire up a browser and actually scrape from the website
         html = get_html_from_url(url)
 
     if write_to_html:
         # Store now for debugging later
         with open(write_to_html, "w") as f:
             f.write(html)
-            print("Html saved to:", write_to_html)
+            print("HTML saved as:", write_to_html)
 
     # Extract information from the HTML code
     df = extract_info_from_html(html, verbose=verbose)
@@ -114,12 +114,12 @@ if __name__ == "__main__":
     # Run for 1 or more specific URLS
     urls = URLS_UNIB[:]
 
-    for url in urls:
+    for url in list(urls):
         # Now choose to write to a html file or read from one or just scrape
-        # args = {"write_to_html": "data/unib/" + re.split(r"/", url)[-1] + ".html"}
-        args = {"read_from_html": "data/unib/" + re.split(r"/", url)[-1] + ".html"}
-        # args = {}
+        # args = {"write_to_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
+        # args = {"read_from_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
+        args = {}
 
         df = scrape_unib(url, verbose=True, **args)
-        df.to_csv("data/unib/" + re.split(r"/", url)[-1] + ".csv")
-        print("Saved as: data/unib/" + re.split(r"/", url)[-1] + ".csv")
+        df.to_csv("data/unib/" + re.split("/", url)[-1] + ".csv")
+        print("Saved as: data/unib/" + re.split("/", url)[-1] + ".csv")
