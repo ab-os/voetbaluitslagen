@@ -39,7 +39,6 @@ def clean_text(text):
         .decode("utf-8")
         .lower()
         .replace(" ", "")
-        .replace("\n", "")
     )
 
 

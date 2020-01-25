@@ -11,7 +11,6 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from time import sleep
 from scrape_538 import clean_text
-import credentials  # <- Not for github!
 
 
 URLS_UNIB = [
