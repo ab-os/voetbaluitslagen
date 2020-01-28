@@ -37,6 +37,23 @@ def select_profit_bets(df_538, df_unib, threshold):
         "barcelona": "fcbarcelona",
         "athleticbilbao": "athleticclubbilbao",
         "granada": "granadacf",
+        # EN
+        "norwich": "norwichcity",
+        "man.city": "manchestercity",
+        "sheffieldutd": "sheffieldunited",
+        "brighton": 'brighton&hovealbion',
+        'leicester': 'leicestercity',
+        'man.united': 'manchesterunited',
+        'wolves': 'wolverhamptonwanderers',
+        'newcastle': 'newcastleunited',
+        # FR
+        'psg': 'parissg',
+        'stetienne': 'saint-etienne',
+        'dijonfco': 'dijon',
+        'nimes': 'nimesolympique',
+        # IT
+        'verona': 'hellasverona',
+        'intermilan': 'inter',
     }
     df_538["home_team"].replace(MAP, inplace=True)
     df_538["away_team"].replace(MAP, inplace=True)
@@ -77,9 +94,13 @@ if __name__ == "__main__":
 
     # Test league i
     # Reads the odds from the temp files so do that first in scrape_unib.py
-    i = 0
-    df_538 = scrape_538(URLS_538[i], verbose=False)
+    i = 5
+    df_538 = scrape_538(URLS_538[i], verbose=True)
     df_unib = scrape_unib(
-        None, read_from_html="tmp/page_" + str(i) + ".html", verbose=False
+        URLS_UNIB[i], 
+        #read_from_html="tmp/page_" + str(i) + ".html", 
+        verbose=True
     )
     df_selected = select_profit_bets(df_538, df_unib, 1.1)
+
+    print('E')
