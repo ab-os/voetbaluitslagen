@@ -1,3 +1,9 @@
+"""" Bet bot
+
+Scrape 538 and unib before running this script
+
+"""
+
 import pandas as pd
 import re
 from time import sleep
@@ -6,6 +12,7 @@ from scrape_538 import scrape_538, URLS_538, clean_text
 from scrape_unib import scrape_unib, URLS_UNIB, wait_for_page_ready
 from select_profit_bets import select_profit_bets
 import credentials  # <- Not for github!
+
 
 # Global constants
 THRESHOLD = 1.1
@@ -47,7 +54,9 @@ def find_all_matches(driver):
 def place_bets(driver, df_selected, d_matches):
 
     # Combine team names
-    df_selected["team_names"] = df_selected["home_team"] + "-" + df_selected["away_team"]
+    df_selected["team_names"] = (
+        df_selected["home_team"] + "-" + df_selected["away_team"]
+    )
 
     # Search first bet
     for (team_names, bet_on) in zip(df_selected["team_names"], df_selected["bet_on"]):
@@ -55,8 +64,10 @@ def place_bets(driver, df_selected, d_matches):
         #
         elem_match = d_matches[team_names]
 
-        elem_buttons = elem_match.find_elements_by_css_selector(".KambiBC-bet-offer button")
-        
+        elem_buttons = elem_match.find_elements_by_css_selector(
+            ".KambiBC-bet-offer button"
+        )
+
         # Scroll the buttons into view
         # Dont use location_once_scrolled_into_view because it may change without warning
         # https://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.location_once_scrolled_into_view
@@ -75,37 +86,43 @@ def place_bets(driver, df_selected, d_matches):
         else:
             raise Exception("Unknown bet_on value")
         sleep(1)
-        elem_betslip = driver.find_element_by_css_selector("input.mod-KambiBC-stake-input")
+        elem_betslip = driver.find_element_by_css_selector(
+            "input.mod-KambiBC-stake-input"
+        )
         elem_betslip.send_keys(str(AMOUNT_EURO))
         sleep(1)
 
         # Place bet
-        driver.find_element_by_css_selector("button.mod-KambiBC-betslip__place-bet-btn").click()
+        driver.find_element_by_css_selector(
+            "button.mod-KambiBC-betslip__place-bet-btn"
+        ).click()
         print("Bet placed:", team_names, bet_on)
         sleep(1)
 
         # Close the betslip
-        driver.find_element_by_css_selector("button.mod-KambiBC-betslip-receipt__close-button").click()
+        driver.find_element_by_css_selector(
+            "button.mod-KambiBC-betslip-receipt__close-button"
+        ).click()
         sleep(1)
-
 
     return 0
 
 
-
 if __name__ == "__main__":
 
-    # Scrape and select the matches I want to bet on
-    i = 1
-    url_538 = URLS_538[i]
-    url_unib = URLS_UNIB[i]
+    # Load prediction from CSV file
+    df_538 = pd.read_csv('./data/538/scrape-latest.csv')
 
-    df_538 = scrape_538(url_538, verbose=True)
-    df_unib = scrape_unib(
-        url_unib,
-        read_from_html=None, #"data/unib/" + re.split(r"/", url_unib)[-1] + ".html",
-        verbose=True,
-    )
+    # Load odds
+    df_unib = pd.read_csv('./data/unib/scrape-latest.csv')
+
+    # Do per URL
+    urls = set(df_unib['url_unib'])
+
+    for url in urls:
+        print(url)
+
+    # Select profitable matches
     df_selected = select_profit_bets(df_538, df_unib, THRESHOLD)
 
     if df_selected.empty:

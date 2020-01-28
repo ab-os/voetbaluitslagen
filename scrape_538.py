@@ -80,6 +80,9 @@ def scrape_538(url, verbose=True, save_html=False):
     df["home_team"] = df["home_team"].apply(clean_text)
     df["away_team"] = df["away_team"].apply(clean_text)
 
+    # 
+    df['url_538'] = url
+
     if verbose:
         print("URL:", url)
         print("Number of matches found: ", len(matches))
@@ -91,7 +94,10 @@ def scrape_538(url, verbose=True, save_html=False):
 
 if __name__ == "__main__":
     # Scrape all URLS
+    l = []
     for url in URLS_538:
-        df = scrape_538(url, verbose=True, save_html=False)
-        df.to_csv("./data/538/" + re.split("/", url)[-1] + ".csv")
-        print("Saved as: ./data/538/" + re.split("/", url)[-1] + ".csv")
+        l.append(scrape_538(url, verbose=True, save_html=False))
+
+    df = pd.concat(l)
+    df.to_csv("./data/538/scrape-latest.csv", index=False)
+    print("Saved as: ./data/538/scrape-latest.csv")

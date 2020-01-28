@@ -102,6 +102,8 @@ def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
     # Extract information from the HTML code
     df = extract_info_from_html(html, verbose=verbose)
 
+    df['url_unib'] = url
+
     if verbose:
         print("URL:", url)
         print("Shape:", df.shape)
@@ -111,15 +113,16 @@ def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
 
 
 if __name__ == "__main__":
-    # Run for 1 or more specific URLS
-    urls = URLS_UNIB[:]
-
-    for url in list(urls):
-        # Now choose to write to a html file or read from one or just scrape
+    # Scrape all urls
+    l = []
+    for url in URLS_UNIB:
+        # Now choose to write to a html file, read from one or just scrape
         # args = {"write_to_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
         # args = {"read_from_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
         args = {}
+        l.append(scrape_unib(url, verbose=True, **args))
 
-        df = scrape_unib(url, verbose=True, **args)
-        df.to_csv("data/unib/" + re.split("/", url)[-1] + ".csv")
-        print("Saved as: data/unib/" + re.split("/", url)[-1] + ".csv")
+    # Save results as 1 csv
+    df = pd.concat(l)
+    df.to_csv("data/unib/scrape-latest.csv")
+    print("Saved as: data/unib/scrape-latest.csv")
