@@ -6,37 +6,53 @@ from datetime import date
 
 
 # Map team names from 538 to those of unib
-# TODO
 MAP = {
-    # NL
-    "twente": "fctwente",
-    "groningen": "fcgroningen",
-    "psv": "psveindhoven",
-    "heerenveen": "scheerenveen",
-    "rkc": "rkcwaalwijk",
-    "vvv-venlo": "vvvvenlo",
-    "emmen": "fcemmen",
-    "sparta": "spartarotterdam",
-    "utrecht": "fcutrecht",
-    "heracles": "heraclesalmelo",
-    # DE
-    "scpaderborn": "scpaderborn07",
-    "schalke04": "fcschalke04",
-    "eintracht": "eintrachtfrankfurt",
-    "mainz": "mainz05",
-    "hoffenheim": "tsghoffenheim",
-    "unionberlin": "1.fcunionberlin",
-    "gladbach": "borussiamonchengladbach",
-    "dortmund": "borussiadortmund",
-    "fortuna": "fortunadusseldorf",
-    "wolfsburg": "vflwolfsburg",
-    "leverkusen": "bayerleverkusen",
-    "bayernmunich": "bayernmunchen",
-    # ES
-    "barcelona": "fcbarcelona",
-    "athleticbilbao": "athleticclubbilbao",
-    "granada": "granadacf",
-}
+        # NL
+        "twente": "fctwente",
+        "groningen": "fcgroningen",
+        "psv": "psveindhoven",
+        "heerenveen": "scheerenveen",
+        "rkc": "rkcwaalwijk",
+        "vvv-venlo": "vvvvenlo",
+        "emmen": "fcemmen",
+        "sparta": "spartarotterdam",
+        "utrecht": "fcutrecht",
+        "heracles": "heraclesalmelo",
+        # DE
+        "scpaderborn": "scpaderborn07",
+        "schalke04": "fcschalke04",
+        "eintracht": "eintrachtfrankfurt",
+        "mainz": "mainz05",
+        "hoffenheim": "tsghoffenheim",
+        "unionberlin": "1.fcunionberlin",
+        "gladbach": "borussiamonchengladbach",
+        "dortmund": "borussiadortmund",
+        "fortuna": "fortunadusseldorf",
+        "wolfsburg": "vflwolfsburg",
+        "leverkusen": "bayerleverkusen",
+        "bayernmunich": "bayernmunchen",
+        # ES
+        "barcelona": "fcbarcelona",
+        "athleticbilbao": "athleticclubbilbao",
+        "granada": "granadacf",
+        # EN
+        "norwich": "norwichcity",
+        "man.city": "manchestercity",
+        "sheffieldutd": "sheffieldunited",
+        "brighton": 'brighton&hovealbion',
+        'leicester': 'leicestercity',
+        'man.united': 'manchesterunited',
+        'wolves': 'wolverhamptonwanderers',
+        'newcastle': 'newcastleunited',
+        # FR
+        'psg': 'parissg',
+        'stetienne': 'saint-etienne',
+        'dijonfco': 'dijon',
+        'nimes': 'nimesolympique',
+        # IT
+        'verona': 'hellasverona',
+        'intermilan': 'inter',
+    }
 
 
 def select_profit_bets(df_538, df_unib, threshold):
