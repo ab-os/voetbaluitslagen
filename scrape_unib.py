@@ -11,7 +11,6 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from time import sleep
 from scrape_538 import clean_text
-import credentials  # <- Not for github!
 
 
 URLS_UNIB = [
@@ -31,7 +30,7 @@ def wait_for_page_ready(driver):
 def get_html_from_url(url):
     # Open a webbrowser, visit Unib and return the html code
     driver = webdriver.Firefox()
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(30)
     driver.get(url)
 
     try:
@@ -39,6 +38,7 @@ def get_html_from_url(url):
         # wait_for_page_ready(driver)
         # driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
         wait_for_page_ready(driver)
+        input("Make sure all matches are visible and press ENTER")
         html = driver.page_source
     finally:
         driver.quit()
@@ -62,7 +62,7 @@ def extract_info_from_html(html, verbose=True):
     for match in matches:
         d = {}
         try:
-            # Date is missing sometimes :/
+            # Date is missing sometimes :(
             d["date"] = match.find(class_="KambiBC-event-item__start-time--date").text
         except:
             d["date"] = None
@@ -70,6 +70,9 @@ def extract_info_from_html(html, verbose=True):
         d["home_team"] = teams[0].text
         d["away_team"] = teams[1].text
         odds = match.find_all(class_="KambiBC-mod-outcome__odds")
+        # Odds are missing sometimes. Just skip the match then
+        if not odds:
+            continue
         d["odd_home_win"] = float(odds[0].text)
         d["odd_tie"] = float(odds[1].text)
         d["odd_away_win"] = float(odds[2].text)
@@ -91,17 +94,19 @@ def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
         with open(read_from_html, "r") as f:
             html = f.read()
     else:
-        # Fire up a browser and extract the html code
+        # Fire up a browser and actually scrape from the website
         html = get_html_from_url(url)
 
     if write_to_html:
         # Store now for debugging later
         with open(write_to_html, "w") as f:
             f.write(html)
-            print("Html saved to:", write_to_html)
+            print("HTML saved as:", write_to_html)
 
     # Extract information from the HTML code
     df = extract_info_from_html(html, verbose=verbose)
+
+    df['url_unib'] = url
 
     if verbose:
         print("URL:", url)
@@ -112,15 +117,17 @@ def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
 
 
 if __name__ == "__main__":
-    # Run for 1 or more specific URLS
-    urls = URLS_UNIB[:]
+    # Scrape all urls
+    l = []
+    for url in URLS_UNIB:
+    #for url in ['https://www.unibet.eu/betting/sports/filter/football/spain']:
+        # Now choose to write to a html file, read from one or just scrape
+        # args = {"write_to_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
+        # args = {"read_from_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
+        args = {}
+        l.append(scrape_unib(url, verbose=True, **args))
 
-    for url in urls:
-        # Now choose to write to a html file or read from one or just scrape
-        # args = {"write_to_html": "data/unib/" + re.split(r"/", url)[-1] + ".html"}
-        args = {"read_from_html": "data/unib/" + re.split(r"/", url)[-1] + ".html"}
-        # args = {}
-
-        df = scrape_unib(url, verbose=True, **args)
-        df.to_csv("data/unib/" + re.split(r"/", url)[-1] + ".csv")
-        print("Saved as: data/unib/" + re.split(r"/", url)[-1] + ".csv")
+    # Save results as 1 csv
+    df = pd.concat(l)
+    df.to_csv("data/unib/scrape-latest.csv", index=False)
+    print("Saved as: data/unib/scrape-latest.csv")

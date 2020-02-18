@@ -1,14 +1,12 @@
 import pandas as pd
 from scrape_538 import scrape_538, URLS_538
 from scrape_unib import scrape_unib, URLS_UNIB
+import re
+from datetime import date
 
 
-def select_profit_bets(df_538, df_unib, threshold):
-    # Names from 538 and unib are different :(
-    # print(set(df_538["home_team"]))
-    # print(set(df_unib["home_team"]))
-
-    MAP = {
+# Map team names from 538 to those of unib
+MAP = {
         # NL
         "twente": "fctwente",
         "groningen": "fcgroningen",
@@ -55,13 +53,17 @@ def select_profit_bets(df_538, df_unib, threshold):
         'verona': 'hellasverona',
         'intermilan': 'inter',
     }
+
+
+def select_profit_bets(df_538, df_unib, threshold):
+    # Team names from 538 and unib are a little bit different :(
+    # print(set(df_538["home_team"]))
+    # print(set(df_unib["home_team"]))
     df_538["home_team"].replace(MAP, inplace=True)
     df_538["away_team"].replace(MAP, inplace=True)
 
     # Check for unmatched team names
-    no_match = (set(df_538["home_team"]) | set(df_538["away_team"])) - (
-        set(df_unib["home_team"]) | set(df_unib["away_team"])
-    )
+    no_match = ( set(df_unib["home_team"]) | set(df_unib["away_team"]) ) - ( set(df_538["home_team"]) | set(df_538["away_team"]) )
     if no_match:
         print("No team name match found for:", no_match)
 
@@ -73,7 +75,7 @@ def select_profit_bets(df_538, df_unib, threshold):
     df.insert(4, "expected_tie", df["prob_tie"] * df["odd_tie"])
     df.insert(5, "expected_away_win", df["prob_away_win"] * df["odd_away_win"])
 
-    # Select profitable matches
+    # Select profitable matches: expectation value above threshold
     df_0 = df[df["expected_home_win"] > threshold]
     df_0.insert(3, "bet_on", "home_win")
     df_1 = df[df["expected_tie"] > threshold]
@@ -90,7 +92,19 @@ def select_profit_bets(df_538, df_unib, threshold):
 
 
 if __name__ == "__main__":
-    # Its only tests here
+    # Select bets for all leagues
+    l = []
+    for (url_538, url_unib) in zip(URLS_538, URLS_UNIB):
+        # Scrape 538
+        df_538 = scrape_538(url_538, verbose=False)
+
+        # Scrape unib
+        df_unib = scrape_unib(
+            url_unib,
+            verbose=False,
+            # Quickly read from html instead of having to fire up a browser to scrape
+            read_from_html="data/unib/" + re.split(r"/", url_unib)[-1] + ".html",
+        )
 
     # Test league i
     # Reads the odds from the temp files so do that first in scrape_unib.py
