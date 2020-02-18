@@ -38,6 +38,7 @@ def get_html_from_url(url):
         # wait_for_page_ready(driver)
         # driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
         wait_for_page_ready(driver)
+        input("Make sure all matches are visible and press ENTER")
         html = driver.page_source
     finally:
         driver.quit()
@@ -61,7 +62,7 @@ def extract_info_from_html(html, verbose=True):
     for match in matches:
         d = {}
         try:
-            # Date is missing sometimes :/
+            # Date is missing sometimes :(
             d["date"] = match.find(class_="KambiBC-event-item__start-time--date").text
         except:
             d["date"] = None
@@ -69,6 +70,9 @@ def extract_info_from_html(html, verbose=True):
         d["home_team"] = teams[0].text
         d["away_team"] = teams[1].text
         odds = match.find_all(class_="KambiBC-mod-outcome__odds")
+        # Odds are missing sometimes. Just skip the match then
+        if not odds:
+            continue
         d["odd_home_win"] = float(odds[0].text)
         d["odd_tie"] = float(odds[1].text)
         d["odd_away_win"] = float(odds[2].text)
@@ -116,6 +120,7 @@ if __name__ == "__main__":
     # Scrape all urls
     l = []
     for url in URLS_UNIB:
+    #for url in ['https://www.unibet.eu/betting/sports/filter/football/spain']:
         # Now choose to write to a html file, read from one or just scrape
         # args = {"write_to_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
         # args = {"read_from_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
@@ -124,5 +129,5 @@ if __name__ == "__main__":
 
     # Save results as 1 csv
     df = pd.concat(l)
-    df.to_csv("data/unib/scrape-latest.csv")
+    df.to_csv("data/unib/scrape-latest.csv", index=False)
     print("Saved as: data/unib/scrape-latest.csv")

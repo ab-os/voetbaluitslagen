@@ -1,6 +1,6 @@
 """ Scrape https://projects.fivethirtyeight.com for football predictions
 
-Run this file to scrape all available predictions for various leagues. Results are stored in ./data/538/
+Run this file to scrape all available predictions for various leagues. Results are stored in ./data/538/scrape-latest.csv
 
 """
 
