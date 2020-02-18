@@ -63,9 +63,7 @@ def select_profit_bets(df_538, df_unib, threshold):
     df_538["away_team"].replace(MAP, inplace=True)
 
     # Check for unmatched team names
-    no_match = (set(df_538["home_team"]) | set(df_538["away_team"])) - (
-        set(df_unib["home_team"]) | set(df_unib["away_team"])
-    )
+    no_match = ( set(df_unib["home_team"]) | set(df_unib["away_team"]) ) - ( set(df_538["home_team"]) | set(df_538["away_team"]) )
     if no_match:
         print("No team name match found for:", no_match)
 
