@@ -16,10 +16,10 @@ from scrape_538 import clean_text
 URLS_UNIB = [
     "https://www.unibet.eu/betting/sports/filter/football" + s
     for s in [
-        # "/netherlands/eredivisie",
-        # "/germany/bundesliga",
-        # "/spain/la_liga",
-        # "/england/premier_league",
+        "/netherlands/eredivisie",
+        "/germany/bundesliga",
+        "/spain/la_liga",
+        "/england/premier_league",
         "/france/ligue_1",
         "/italy/serie_a",
     ]
@@ -34,25 +34,34 @@ def wait_for_page_ready(driver):
     sleep(1)
 
 
-def get_html_from_url(url):
-    # Open a webbrowser and return the html code
+def get_htmls_from_urls(urls):
+    # Initialize a webbrowser
     driver = webdriver.Firefox()
-    driver.implicitly_wait(10)
-    driver.get(url)
+    driver.implicitly_wait(30)
 
+    # Loop over alle urls
+    htmls = []
     try:
-        # Accept cookies - this is not needed I think
-        # wait_for_page_ready(driver)
-        # driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
-        wait_for_page_ready(driver)
-        html = driver.page_source
+        for url in urls:
+            # Browse to url
+            driver.get(url)
+            wait_for_page_ready(driver)
+
+            # Accept cookies if not already done
+            if not driver.get_cookie("CookieConsent"):
+                driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
+            wait_for_page_ready(driver)
+
+            # Get html code
+            htmls.append(driver.page_source)
     finally:
+        # Zorg dat de browser altijd wordt gesloten, zelfs bij een KeyboardInterrupt
         driver.quit()
 
-    return html
+    return htmls
 
 
-def extract_info_from_html(html, verbose=True):
+def scrape_info_from_html(html, verbose=True):
     # Debug? Open de html in de browser
     # lxml.html.open_in_browser(html)
 
@@ -98,29 +107,16 @@ def extract_info_from_html(html, verbose=True):
     return df
 
 
-def scrape_unib(url, verbose=True):
-
-    # Fire up a browser and actually scrape from the website
-    html = get_html_from_url(url)
-
-    # Extract information from the HTML code
-    df = extract_info_from_html(html, verbose=verbose)
-
-    df["url_unib"] = url
-
-    if verbose:
-        print("URL:", url)
-        print("Shape:", df.shape)
-        print(df.head())
-
-    return df
-
-
 if __name__ == "__main__":
-    # Scrape all urls
-    l = []
-    for url in URLS_UNIB:
-        l.append(scrape_unib(url, verbose=True))
+
+    # Haal eerst de html code van elke website op
+    htmls = get_htmls_from_urls(URLS_UNIB)
+
+    # Pak info
+    dfs = [scrape_info_from_html(h) for h in htmls]
+
+    # Voeg elke url toe als kolom aan het dataframe
+    dfs = [d.insert(0, "url", u) for (d, u) in zip(dfs, URLS_UNIB)]
 
     # Save results as 1 csv
     df = pd.concat(l)
