@@ -41,6 +41,10 @@ def clean_text(text):
         .replace(" ", "_")
     )
 
+def get_league_from_url(url):
+    return url.split("/")[-1]
+
+
 
 def scrape_538(url, verbose=True):
     """Scrape one of the 538 pages. Returns a dataframe with the match predictions."""
@@ -51,7 +55,7 @@ def scrape_538(url, verbose=True):
     tree = lxml.html.document_fromstring(page.content)
 
     # For debugging: View it in a browser
-    #lxml.html.open_in_browser(tree)
+    # lxml.html.open_in_browser(tree)
 
     # Extract all matches
     matches = tree.cssselect(".games-container.upcoming .match-container")
@@ -78,7 +82,7 @@ def scrape_538(url, verbose=True):
     df["away_team"] = df["away_team"].apply(clean_text)
 
     # Add the website url as a static column
-    df["url_538"] = url
+    df["league"] = get_league_from_url(url)
 
     if verbose:
         print("URL:", url)
