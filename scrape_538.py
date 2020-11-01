@@ -4,7 +4,7 @@ Run this file to scrape all available predictions for various leagues. Results a
 
 """
 
-from lxml import html
+import lxml.html
 import requests
 import re
 import pandas as pd
@@ -32,29 +32,26 @@ def convert_percentage_string_to_float(perc_str):
 
 
 def clean_text(text):
-    # "Atlético Madrid" to "atleticomadrid"
+    # "Atlético Madrid" to "atletico_madrid"
     return (
         unicodedata.normalize("NFKD", text)
         .encode(encoding="ascii", errors="ignore")
         .decode("ascii")
         .lower()
-        .replace(" ", "")
+        .replace(" ", "_")
     )
 
 
-def scrape_538(url, verbose=True, save_html=False):
+def scrape_538(url, verbose=True):
     """Scrape one of the 538 pages. Returns a dataframe with the match predictions."""
 
-    # Request the page html
+    # Get the page html
+    # https://docs.python-guide.org/scenarios/scrape/
     page = requests.get(url)
-    tree = html.fromstring(page.content)
+    tree = lxml.html.document_fromstring(page.content)
 
-    # For debugging: Save the html so you can view it in a browser
-    if save_html:
-        with open("./data/538/html/" + re.split("/", url)[-1] + ".html", "w") as f:
-            # page.content = bytes and page.text = str
-            f.write(page.text)
-            print("HTML saved as: ./data/538/html/" + re.split("/", url)[-1] + ".html")
+    # For debugging: View it in a browser
+    #lxml.html.open_in_browser(tree)
 
     # Extract all matches
     matches = tree.cssselect(".games-container.upcoming .match-container")
@@ -65,9 +62,9 @@ def scrape_538(url, verbose=True, save_html=False):
         d = dict()
         d["date"] = match.cssselect(".date div")[0].text
         d["home_team"] = match.cssselect(".match-top .name")[0].text
+        d["away_team"] = match.cssselect(".match-bottom .name")[0].text
         d["prob_home_win"] = match.cssselect(".match-top .prob")[0].text
         d["prob_tie"] = match.cssselect(".tie-prob div")[0].text
-        d["away_team"] = match.cssselect(".match-bottom .name")[0].text
         d["prob_away_win"] = match.cssselect(".match-bottom .prob")[0].text
         l.append(d)
 
@@ -80,7 +77,7 @@ def scrape_538(url, verbose=True, save_html=False):
     df["home_team"] = df["home_team"].apply(clean_text)
     df["away_team"] = df["away_team"].apply(clean_text)
 
-    #
+    # Add the website url as a static column
     df["url_538"] = url
 
     if verbose:
@@ -96,7 +93,7 @@ if __name__ == "__main__":
     # Scrape all URLS
     l = []
     for url in URLS_538:
-        l.append(scrape_538(url, verbose=True, save_html=False))
+        l.append(scrape_538(url, verbose=True))
 
     df = pd.concat(l)
     df.to_csv("./data/latest-scrape-538.csv", index=False)

@@ -16,10 +16,10 @@ from scrape_538 import clean_text
 URLS_UNIB = [
     "https://www.unibet.eu/betting/sports/filter/football" + s
     for s in [
-        "/netherlands/eredivisie",
-        "/germany/bundesliga",
-        "/spain/la_liga",
-        "/england/premier_league",
+        # "/netherlands/eredivisie",
+        # "/germany/bundesliga",
+        # "/spain/la_liga",
+        # "/england/premier_league",
         "/france/ligue_1",
         "/italy/serie_a",
     ]
@@ -98,22 +98,10 @@ def extract_info_from_html(html, verbose=True):
     return df
 
 
-def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
-    # Use the read_from and write_to for debugging and not having to load the website in Firefox
+def scrape_unib(url, verbose=True):
 
-    if read_from_html:
-        # If this happens url is completely ignored
-        with open(read_from_html, "r") as f:
-            html = f.read()
-    else:
-        # Fire up a browser and actually scrape from the website
-        html = get_html_from_url(url)
-
-    if write_to_html:
-        # Store now for debugging later
-        with open(write_to_html, "w") as f:
-            f.write(html)
-            print("HTML saved as:", write_to_html)
+    # Fire up a browser and actually scrape from the website
+    html = get_html_from_url(url)
 
     # Extract information from the HTML code
     df = extract_info_from_html(html, verbose=verbose)
@@ -132,13 +120,9 @@ if __name__ == "__main__":
     # Scrape all urls
     l = []
     for url in URLS_UNIB:
-        # Now choose to scrape online or debug: write/read a html file
-        args = {}
-        # args = {"write_to_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
-        # args = {"read_from_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
-        l.append(scrape_unib(url, verbose=True, **args))
+        l.append(scrape_unib(url, verbose=True))
 
     # Save results as 1 csv
     df = pd.concat(l)
-    df.to_csv("data/latest-scrape-unib.csv", index=False)
-    print("Saved as: data/latest-scrape-unib.csv")
+    df.to_csv("./data/latest-scrape-unib.csv", index=False)
+    print("Saved as: ./data/latest-scrape-unib.csv")
