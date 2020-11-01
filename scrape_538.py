@@ -80,8 +80,8 @@ def scrape_538(url, verbose=True, save_html=False):
     df["home_team"] = df["home_team"].apply(clean_text)
     df["away_team"] = df["away_team"].apply(clean_text)
 
-    # 
-    df['url_538'] = url
+    #
+    df["url_538"] = url
 
     if verbose:
         print("URL:", url)
@@ -99,5 +99,5 @@ if __name__ == "__main__":
         l.append(scrape_538(url, verbose=True, save_html=False))
 
     df = pd.concat(l)
-    df.to_csv("./data/538/scrape-latest.csv", index=False)
-    print("Saved as: ./data/538/scrape-latest.csv")
+    df.to_csv("./data/latest-scrape-538.csv", index=False)
+    print("Saved as: ./data/latest-scrape-538.csv")

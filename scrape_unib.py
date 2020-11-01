@@ -8,19 +8,26 @@ import numpy as np
 import pandas as pd
 import re
 from selenium import webdriver
-from bs4 import BeautifulSoup
+import lxml.html
 from time import sleep
 from scrape_538 import clean_text
 
 
 URLS_UNIB = [
     "https://www.unibet.eu/betting/sports/filter/football" + s
-    for s in ["/netherlands", "/germany", "/spain", "/england", "/france", "/italy"]
+    for s in [
+        "/netherlands/eredivisie",
+        "/germany/bundesliga",
+        "/spain/la_liga",
+        "/england/premier_league",
+        "/france/ligue_1",
+        "/italy/serie_a",
+    ]
 ]
 
 
 def wait_for_page_ready(driver):
-    # Why is waiting so difficult...? Let's just wait and sleep
+    # Why is conditional waiting so difficult...? Let's just sleep and check
     sleep(1)
     while driver.execute_script("return document.readyState") != "complete":
         sleep(1)
@@ -28,9 +35,9 @@ def wait_for_page_ready(driver):
 
 
 def get_html_from_url(url):
-    # Open a webbrowser, visit Unib and return the html code
+    # Open a webbrowser and return the html code
     driver = webdriver.Firefox()
-    driver.implicitly_wait(30)
+    driver.implicitly_wait(10)
     driver.get(url)
 
     try:
@@ -38,7 +45,6 @@ def get_html_from_url(url):
         # wait_for_page_ready(driver)
         # driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
         wait_for_page_ready(driver)
-        input("Make sure all matches are visible and press ENTER")
         html = driver.page_source
     finally:
         driver.quit()
@@ -47,13 +53,19 @@ def get_html_from_url(url):
 
 
 def extract_info_from_html(html, verbose=True):
-    # Load with bs4
-    soup = BeautifulSoup(html, features="lxml")
+    # Debug? Open de html in de browser
+    # lxml.html.open_in_browser(html)
+
+    # Clean and open with lxml
+    # clean_html = lxml.html.clean_html(html)
+    doc = lxml.html.document_fromstring(html)
 
     # Find all matches, except the currently live matches
-    matches = soup.select(
-        ".KambiBC-event-groups li.KambiBC-event-item:not(.KambiBC-event-item--live)"
-    )
+    # Class voor wedstrijddag .e385f
+    # Class voor 1 wedstrijd .a9753
+    # Class voor teamnamen .d74c2
+    # Class voor de odds ._5a5c0
+    matches = doc.cssselect(".e385f .a9753")
 
     if verbose:
         print("Number of matches found in html: ", len(matches))
@@ -66,10 +78,10 @@ def extract_info_from_html(html, verbose=True):
             d["date"] = match.find(class_="KambiBC-event-item__start-time--date").text
         except:
             d["date"] = None
-        teams = match.find_all(class_="KambiBC-event-participants__name")
-        d["home_team"] = teams[0].text
-        d["away_team"] = teams[1].text
-        odds = match.find_all(class_="KambiBC-mod-outcome__odds")
+        teams = match.cssselect(".d74c2")
+        d["home_team"] = teams[0].text_content()
+        d["away_team"] = teams[1].text_content()
+        odds = match.cssselect("._5a5c0")
         # Odds are missing sometimes. Just skip the match then
         if not odds:
             continue
@@ -106,7 +118,7 @@ def scrape_unib(url, verbose=True, read_from_html=None, write_to_html=None):
     # Extract information from the HTML code
     df = extract_info_from_html(html, verbose=verbose)
 
-    df['url_unib'] = url
+    df["url_unib"] = url
 
     if verbose:
         print("URL:", url)
@@ -120,14 +132,13 @@ if __name__ == "__main__":
     # Scrape all urls
     l = []
     for url in URLS_UNIB:
-    #for url in ['https://www.unibet.eu/betting/sports/filter/football/spain']:
-        # Now choose to write to a html file, read from one or just scrape
+        # Now choose to scrape online or debug: write/read a html file
+        args = {}
         # args = {"write_to_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
         # args = {"read_from_html": "data/unib/html/" + re.split("/", url)[-1] + ".html"}
-        args = {}
         l.append(scrape_unib(url, verbose=True, **args))
 
     # Save results as 1 csv
     df = pd.concat(l)
-    df.to_csv("data/unib/scrape-latest.csv", index=False)
-    print("Saved as: data/unib/scrape-latest.csv")
+    df.to_csv("data/latest-scrape-unib.csv", index=False)
+    print("Saved as: data/latest-scrape-unib.csv")

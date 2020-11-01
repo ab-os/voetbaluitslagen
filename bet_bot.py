@@ -111,19 +111,24 @@ def place_bets(driver, df_selected, d_matches):
 if __name__ == "__main__":
 
     # Load prediction from CSV file
-    df_538 = pd.read_csv('./data/538/scrape-latest.csv')
+    df_538 = pd.read_csv("./data/538/scrape-latest.csv")
 
     # Load odds
-    df_unib = pd.read_csv('./data/unib/scrape-latest.csv')
+    df_unib = pd.read_csv("./data/unib/scrape-latest.csv")
 
     # Do per URL
-    urls = set(df_unib['url_unib'])
+    urls = set(df_unib["url_unib"])
 
     for url in urls:
         print(url)
 
     # Select profitable matches
     df_selected = select_profit_bets(df_538, df_unib, THRESHOLD)
+
+    ###
+    ### Just break here and place the bets your self?
+    ###
+    exit()
 
     if df_selected.empty:
         raise Exception()

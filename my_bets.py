@@ -47,7 +47,7 @@ if __name__ == "__main__":
         driver = webdriver.Firefox()
         driver.implicitly_wait(10)
         driver.get("https://www.unibet.eu/betting/sports/bethistory/")
-        
+
         # Do all browser handling in a try-finally block
         try:
             wait_for_page_ready(driver)
@@ -64,7 +64,7 @@ if __name__ == "__main__":
             driver.quit()
 
     # For debugging: write to or read from temporary source file
-    #with open("tmp/my_bets.html", "w") as f:
+    # with open("tmp/my_bets.html", "w") as f:
     #    f.write(html)
     with open("tmp/my_bets.html", "r") as f:
         html = f.read()
@@ -77,27 +77,39 @@ if __name__ == "__main__":
     l = []
     for coupon in coupons:
         d = {}
-        d["coupon-date"] = coupon.select_one(".KambiBC-my-bets-summary__coupon-date").text
+        d["coupon-date"] = coupon.select_one(
+            ".KambiBC-my-bets-summary__coupon-date"
+        ).text
         d["status"] = coupon.select_one(".KambiBC-my-bets-summary__coupon-status").text
         fields = coupon.select(".KambiBC-my-bets-summary__field")
         d["label"] = fields[0].text
-        d["stake"] = fields[1].text     # Maybe only use the value in .KambiBC-my-bets-summary__value
+        d["stake"] = fields[
+            1
+        ].text  # Maybe only use the value in .KambiBC-my-bets-summary__value
         d["odds"] = fields[2].text
         d["potential-payout"] = fields[3].text if len(fields) >= 4 else None
-        d["event-list-name"] = coupon.select_one(".KambiBC-my-bets-summary-coupon__event-list-name").text
-        d["cash-out"] = coupon.select_one(".KambiBC-my-bets-summary-coupon__cash-out-wrapper").text
+        d["event-list-name"] = coupon.select_one(
+            ".KambiBC-my-bets-summary-coupon__event-list-name"
+        ).text
+        d["cash-out"] = coupon.select_one(
+            ".KambiBC-my-bets-summary-coupon__cash-out-wrapper"
+        ).text
         l.append(d)
-    
+
     # Make a dataframe
     df = pd.DataFrame(l)
 
     # Data processing
-    df.stake = df.stake.apply(lambda s: float(s.replace('Stake: €', '')))
-    df.odds = df.odds.apply(lambda s: float(s.replace('Odds: ', '').replace('(',"").replace(')',"")))
-    df['cash-out'] = df['cash-out'].apply(lambda s: s.replace('Cash Out', '').replace('€', ''))
-    teamnames = df['event-list-name'].str.split(' - ', expand=True)
-    df['home-team'] = teamnames[0]
-    df['away-team'] = teamnames[1]
+    df.stake = df.stake.apply(lambda s: float(s.replace("Stake: €", "")))
+    df.odds = df.odds.apply(
+        lambda s: float(s.replace("Odds: ", "").replace("(", "").replace(")", ""))
+    )
+    df["cash-out"] = df["cash-out"].apply(
+        lambda s: s.replace("Cash Out", "").replace("€", "")
+    )
+    teamnames = df["event-list-name"].str.split(" - ", expand=True)
+    df["home-team"] = teamnames[0]
+    df["away-team"] = teamnames[1]
 
     ### TODO:
     # Potential payout and payout in hetzelfde vakje?
@@ -106,5 +118,5 @@ if __name__ == "__main__":
 
     print(df.shape)
     pprint(df.head())
-    df.to_csv('my_bets_20200218.csv')
-    print('End')
+    df.to_csv("my_bets_20200218.csv")
+    print("End")
