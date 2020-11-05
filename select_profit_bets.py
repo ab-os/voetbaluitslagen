@@ -1,6 +1,4 @@
 import pandas as pd
-from scrape_538 import scrape_538, URLS_538
-from scrape_unib import scrape_unib, URLS_UNIB
 import re
 from datetime import date
 
@@ -8,50 +6,49 @@ from datetime import date
 # Map team names from 538 to those of unib
 MAP = {
     # NL
-    "twente": "fctwente",
-    "groningen": "fcgroningen",
-    "psv": "psveindhoven",
-    "heerenveen": "scheerenveen",
-    "rkc": "rkcwaalwijk",
-    "vvv-venlo": "vvvvenlo",
-    "emmen": "fcemmen",
-    "sparta": "spartarotterdam",
-    "utrecht": "fcutrecht",
-    "heracles": "heraclesalmelo",
+    "twente": "fc_twente",
+    "groningen": "fc_groningen",
+    "psv": "psv_eindhoven",
+    "heerenveen": "sc_heerenveen",
+    "rkc": "rkc_waalwijk",
+    "vvv-venlo": "vvv_venlo",
+    "sparta": "sparta_rotterdam",
+    "utrecht": "fc_utrecht",
+    "heracles": "heracles_almelo",
+    "emmen": "fc_emmen",
     # DE
-    "scpaderborn": "scpaderborn07",
-    "schalke04": "fcschalke04",
-    "eintracht": "eintrachtfrankfurt",
-    "mainz": "mainz05",
-    "hoffenheim": "tsghoffenheim",
-    "unionberlin": "1.fcunionberlin",
-    "gladbach": "borussiamonchengladbach",
-    "dortmund": "borussiadortmund",
-    "fortuna": "fortunadusseldorf",
-    "wolfsburg": "vflwolfsburg",
-    "leverkusen": "bayerleverkusen",
-    "bayernmunich": "bayernmunchen",
+    "schalke_04": "fc_schalke_04",
+    "eintracht": "eintracht_frankfurt",
+    "mainz": "mainz_05",
+    "hoffenheim": "tsg_hoffenheim",
+    "union_berlin": "1._fc_union_berlin",
+    "gladbach": "borussia_monchengladbach",
+    "dortmund": "borussia_dortmund",
+    "wolfsburg": "vfl_wolfsburg",
+    "leverkusen": "bayer_leverkusen",
+    "bayern_munich": "bayern_munchen",
+    "arminia": "arminia_bielefeld",
     # ES
-    "barcelona": "fcbarcelona",
-    "athleticbilbao": "athleticclubbilbao",
-    "granada": "granadacf",
+    "barcelona": "fc_barcelona",
+    "athletic_bilbao": "athletic_club_bilbao",
+    "granada": "granada_cf",
     # EN
-    "norwich": "norwichcity",
-    "man.city": "manchestercity",
-    "sheffieldutd": "sheffieldunited",
-    "brighton": "brighton&hovealbion",
-    "leicester": "leicestercity",
-    "man.united": "manchesterunited",
-    "wolves": "wolverhamptonwanderers",
-    "newcastle": "newcastleunited",
-    # FR
-    "psg": "parissg",
-    "stetienne": "saint-etienne",
-    "dijonfco": "dijon",
-    "nimes": "nimesolympique",
+    "man._city": "manchester_city",
+    "man._united": "manchester_united",
+    "sheffield_utd": "sheffield_united",
+    "brighton": "brighton_&_hove_albion",
+    "leicester": "leicester_city",
+    "wolves": "wolverhampton_wanderers",
+    "newcastle": "newcastle_united",
+    "west_brom": "west_bromwich",
+    # # FR
+    "psg": "paris_sg",
+    "st_etienne": "saint-etienne",
+    "dijon_fco": "dijon",
+    "nimes": "nimes_olympique",
     # IT
-    "verona": "hellasverona",
-    "intermilan": "inter",
+    "verona": "hellas_verona",
+    "inter_milan": "inter",
 }
 
 
@@ -63,9 +60,7 @@ def select_profit_bets(df_538, df_unib, threshold):
     df_538["away_team"].replace(MAP, inplace=True)
 
     # Check for unmatched team names
-    no_match = (set(df_unib["home_team"]) | set(df_unib["away_team"])) - (
-        set(df_538["home_team"]) | set(df_538["away_team"])
-    )
+    no_match = set(df_unib.loc[:, ["home_team", "away_team"]].values.flatten()) ^ set(df_538.loc[:, ["home_team", "away_team"]].values.flatten())
     if no_match:
         print("No team name match found for:", no_match)
 

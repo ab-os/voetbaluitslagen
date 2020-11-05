@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from bs4 import BeautifulSoup
 from time import sleep
-from scrape_538 import clean_text
+from scrape_538 import clean_team_names
 import credentials  # <- Not for github!
 from scrape_unib import wait_for_page_ready
 

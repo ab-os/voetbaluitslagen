@@ -8,7 +8,7 @@ import pandas as pd
 import re
 from time import sleep
 from selenium import webdriver
-from scrape_538 import scrape_538, URLS_538, clean_text
+from scrape_538 import scrape_538, URLS_538, clean_team_names
 from scrape_unib import scrape_unib, URLS_UNIB, wait_for_page_ready
 from select_profit_bets import select_profit_bets
 import credentials  # <- Not for github!
@@ -44,7 +44,7 @@ def find_all_matches(driver):
 
     # Separate team names with "-"
     team_names = [mt.replace("\n", "-") for mt in team_names]
-    team_names = [clean_text(mt) for mt in team_names]
+    team_names = [clean_team_names(mt) for mt in team_names]
 
     # Construct dictionary with the webpage elements
     d = dict(zip(team_names, elem_matches))

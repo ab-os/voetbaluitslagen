@@ -11,58 +11,58 @@ from selenium import webdriver
 import lxml.html
 from time import sleep
 from pathlib import Path
-from scrape_538 import clean_text
-from scrape_unib import wait_for_page_ready, get_html_from_url, extract_info_from_html, scrape_unib
+from scrape_538 import get_league_from_url
+from scrape_unib import wait_for_page_ready, get_htmls_from_urls, scrape_info_from_html
 
 URLS_UNIB = [
     "https://www.unibet.eu/betting/sports/filter/football" + s
     for s in [
-        # "/netherlands/eredivisie",
-        # "/germany/bundesliga",
+        "/netherlands/eredivisie",
+        "/germany/bundesliga",
         "/spain/la_liga",
-        # "/england/premier_league",
-        # "/france/ligue_1",
-        # "/italy/serie_a",
+        "/england/premier_league",
+        "/france/ligue_1",
+        "/italy/serie_a",
     ]
 ]
 
 
-def download_page_as_local_html_file(url):
+def download_pages(urls, paths):
 
     # Scrape from online
-    html = get_html_from_url(url)
-    
-    filepath = Path(f"./data/html/unib-{get_league_from_url(url)}.html")
-    with open(filepath, "w") as f:
-        f.write(html)
+    htmls = get_htmls_from_urls(urls)
 
-
-def read_from_local_html_file(url):
-    filepath = Path(f"./data/html/unib-{get_league_from_url(url)}.html")
-    with open(filepath, "r") as f:
-        html = f.read()
-    return html
-
-
-def get_league_from_url(url):
-    return url.split('/')[-1]
+    for (h, p) in zip(htmls, paths):
+        # Wegschrijven
+        with open(p, "w") as f:
+            f.write(h)
 
 
 if __name__ == "__main__":
-    # Scrape all urls
-    l = []
-    for url in URLS_UNIB:
-        
-        # Open een browser en download de html code 
-        # Doe dit maar 1 keer en lees de volgende keren van het lokale bestand
-        # download_page_as_local_html_file(url)
 
-        # Read from html file
-        html = read_from_local_html_file(url)
+    # Html local storage location
+    html_filenames = [
+        f"./data/html/unib-{get_league_from_url(u)}.html" for u in URLS_UNIB
+    ]
 
-        # Get info
-        df = extract_info_from_html(html, verbose=True)
-        l.append(df)
-        
-    df = pd.concat(l)
+    # Download pages en opslaan as html file
+    # Comment als dit niet meer hoeft te gebeuren
+    # download_pages(URLS_UNIB, html_filenames)
+
+    # Inlezen html bestanden
+    htmls = []
+    for html_filename in html_filenames:
+        with open(html_filename, "r") as f:
+            print(f"Reading {html_filename}...")
+            h = f.read()
+            htmls.append(h)
+
+    # Pak info
+    dfs = [scrape_info_from_html(h) for h in htmls]
+
+    # Voeg elke url toe als kolom aan het dataframe
+    [d.insert(0, "league", get_league_from_url(u)) for (d, u) in zip(dfs, URLS_UNIB)]
+
+    df = pd.concat(dfs)
+    print(len(df))
     print(df.head())

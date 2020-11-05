@@ -1,6 +1,6 @@
-""" Scrape https://www.unibet.eu/betting/sports/filter/football for betting odds
+""" Scrape Unib for betting odds
 
-Run this file to scrape all available odds for various soccer leagues. Results are stored in ./data/unib/
+Run this file to scrape all available odds for various soccer leagues. Results are stored in ./data/
 
 """
 
@@ -9,8 +9,9 @@ import pandas as pd
 import re
 from selenium import webdriver
 import lxml.html
+from lxml.html.clean import Cleaner
 from time import sleep
-from scrape_538 import clean_text
+from scrape_538 import clean_team_names, get_league_from_url
 
 
 URLS_UNIB = [
@@ -37,7 +38,7 @@ def wait_for_page_ready(driver):
 def get_htmls_from_urls(urls):
     # Initialize a webbrowser
     driver = webdriver.Firefox()
-    driver.implicitly_wait(30)
+    driver.implicitly_wait(10)
 
     # Loop over alle urls
     htmls = []
@@ -49,14 +50,21 @@ def get_htmls_from_urls(urls):
 
             # Accept cookies if not already done
             if not driver.get_cookie("CookieConsent"):
+                # Cookie bar animation is slow
+                sleep(10)
                 driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
-            wait_for_page_ready(driver)
+                wait_for_page_ready(driver)
 
             # Get html code
             htmls.append(driver.page_source)
     finally:
         # Zorg dat de browser altijd wordt gesloten, zelfs bij een KeyboardInterrupt
         driver.quit()
+
+    # Clean the html code to remove scripts and styling
+    # Keep the forms because the odds are in buttons
+    cleaner = Cleaner(forms=False)
+    htmls = [cleaner.clean_html(h) for h in htmls]
 
     return htmls
 
@@ -70,11 +78,11 @@ def scrape_info_from_html(html, verbose=True):
     doc = lxml.html.document_fromstring(html)
 
     # Find all matches, except the currently live matches
-    # Class voor wedstrijddag .e385f
+    # Class voor 1 wedstrijddag .e385f
     # Class voor 1 wedstrijd .a9753
-    # Class voor teamnamen .d74c2
-    # Class voor de odds ._5a5c0
-    matches = doc.cssselect(".e385f .a9753")
+    # Class voor 2 teamnamen .af24c
+    # Class voor 3 odds ._5a5c0
+    matches = doc.cssselect("div.e385f div.a9753")
 
     if verbose:
         print("Number of matches found in html: ", len(matches))
@@ -82,18 +90,10 @@ def scrape_info_from_html(html, verbose=True):
     l = []
     for match in matches:
         d = {}
-        try:
-            # Date is missing sometimes :(
-            d["date"] = match.find(class_="KambiBC-event-item__start-time--date").text
-        except:
-            d["date"] = None
-        teams = match.cssselect(".d74c2")
-        d["home_team"] = teams[0].text_content()
-        d["away_team"] = teams[1].text_content()
-        odds = match.cssselect("._5a5c0")
-        # Odds are missing sometimes. Just skip the match then
-        if not odds:
-            continue
+        teams = match.cssselect("div.af24c")
+        d["home_team"] = teams[0].text
+        d["away_team"] = teams[1].text
+        odds = match.cssselect("span._5a5c0")
         d["odd_home_win"] = float(odds[0].text)
         d["odd_tie"] = float(odds[1].text)
         d["odd_away_win"] = float(odds[2].text)
@@ -102,8 +102,8 @@ def scrape_info_from_html(html, verbose=True):
     df = pd.DataFrame(l)
 
     # Cleaning
-    df["home_team"] = df["home_team"].apply(clean_text)
-    df["away_team"] = df["away_team"].apply(clean_text)
+    df["home_team"] = df["home_team"].apply(clean_team_names)
+    df["away_team"] = df["away_team"].apply(clean_team_names)
     return df
 
 
@@ -115,10 +115,10 @@ if __name__ == "__main__":
     # Pak info
     dfs = [scrape_info_from_html(h) for h in htmls]
 
-    # Voeg elke url toe als kolom aan het dataframe
-    dfs = [d.insert(0, "url", u) for (d, u) in zip(dfs, URLS_UNIB)]
+    # Voeg elke league toe als kolom aan het dataframe
+    [d.insert(0, "league", get_league_from_url(u)) for (d, u) in zip(dfs, URLS_UNIB)]
 
     # Save results as 1 csv
-    df = pd.concat(l)
+    df = pd.concat(dfs)
     df.to_csv("./data/latest-scrape-unib.csv", index=False)
     print("Saved as: ./data/latest-scrape-unib.csv")

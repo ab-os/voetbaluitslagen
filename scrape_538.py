@@ -1,6 +1,6 @@
 """ Scrape https://projects.fivethirtyeight.com for football predictions
 
-Run this file to scrape all available predictions for various leagues. Results are stored in ./data/538/scrape-latest.csv
+Run this file to scrape all available predictions for various leagues. Results are stored in ./data/latest-scrape-538.csv
 
 """
 
@@ -31,7 +31,7 @@ def convert_percentage_string_to_float(perc_str):
     return float(m.group()) / 100 if m else None
 
 
-def clean_text(text):
+def clean_team_names(text):
     # "Atlético Madrid" to "atletico_madrid"
     return (
         unicodedata.normalize("NFKD", text)
@@ -78,8 +78,8 @@ def scrape_538(url, verbose=True):
     df["prob_home_win"] = df["prob_home_win"].apply(convert_percentage_string_to_float)
     df["prob_tie"] = df["prob_tie"].apply(convert_percentage_string_to_float)
     df["prob_away_win"] = df["prob_away_win"].apply(convert_percentage_string_to_float)
-    df["home_team"] = df["home_team"].apply(clean_text)
-    df["away_team"] = df["away_team"].apply(clean_text)
+    df["home_team"] = df["home_team"].apply(clean_team_names)
+    df["away_team"] = df["away_team"].apply(clean_team_names)
 
     # Add the website url as a static column
     df["league"] = get_league_from_url(url)
