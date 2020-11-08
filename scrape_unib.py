@@ -73,15 +73,8 @@ def scrape_info_from_html(html, verbose=True):
     # Debug? Open de html in de browser
     # lxml.html.open_in_browser(html)
 
-    # Clean and open with lxml
-    # clean_html = lxml.html.clean_html(html)
+    # Find all matches
     doc = lxml.html.document_fromstring(html)
-
-    # Find all matches, except the currently live matches
-    # Class voor 1 wedstrijddag .e385f
-    # Class voor 1 wedstrijd .a9753
-    # Class voor 2 teamnamen .af24c
-    # Class voor 3 odds ._5a5c0
     matches = doc.cssselect("div.e385f div.a9753")
 
     if verbose:
