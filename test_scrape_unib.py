@@ -12,19 +12,7 @@ import lxml.html
 from time import sleep
 from pathlib import Path
 from scrape_538 import get_league_from_url
-from scrape_unib import wait_for_page_ready, get_htmls_from_urls, scrape_info_from_html
-
-URLS_UNIB = [
-    "https://www.unibet.eu/betting/sports/filter/football" + s
-    for s in [
-        "/netherlands/eredivisie",
-        "/germany/bundesliga",
-        "/spain/la_liga",
-        "/england/premier_league",
-        "/france/ligue_1",
-        "/italy/serie_a",
-    ]
-]
+from scrape_unib import wait_for_page_ready, get_htmls_from_urls, scrape_info_from_html, URLS_UNIB
 
 
 def download_pages(urls, paths):
