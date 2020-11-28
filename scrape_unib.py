@@ -52,7 +52,7 @@ def get_htmls_from_urls(urls):
             if not driver.get_cookie("CookieConsent"):
                 # Cookie bar animation is slow
                 sleep(10)
-                driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
+                #driver.find_element_by_css_selector("#CybotCookiebotDialogBodyButtonAccept").click()
                 wait_for_page_ready(driver)
 
             # Get html code
@@ -82,6 +82,10 @@ def scrape_info_from_html(html, verbose=True):
 
     l = []
     for match in matches:
+        # Skip live matches (has div with class _4f9f4 or f118a)
+        if match.cssselect("div._4f9f4") or match.cssselect("div.f118a"):
+            continue
+
         d = {}
         teams = match.cssselect("div.af24c")
         d["home_team"] = teams[0].text
